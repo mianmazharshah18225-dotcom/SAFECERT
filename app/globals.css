@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --primary: #1d4ed8;
+  --primary-dark: #0f2a8a;
+  --gold: #f59e0b;
+  --dark: #020817;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #ffffff;
+  color: #0a1628;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1d4ed8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0f2a8a; }
+
+/* Animation utilities */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
+
+.opacity-0 { opacity: 0; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #020817 0%, #0a1f40 40%, #0f2a8a 100%);
+}
+
+/* Gold shimmer button */
+.btn-gold {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24, #f59e0b);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  color: #020817;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.4);
+}
+
+/* Card hover */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(29, 78, 216, 0.15);
+}
+
+/* Section reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar blur */
+.navbar-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Trust badge */
+.trust-badge {
+  background: linear-gradient(135deg, #f59e0b20, #f59e0b10);
+  border: 1px solid #f59e0b40;
+}
+
+/* Mega menu */
+.mega-menu {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Star rating */
+.stars {
+  color: #00b67a;
+}
+
+/* Number counter */
+.counter-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* Divider */
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1d4ed8, #f59e0b, transparent);
+}
+
+/* Course card */
+.course-card {
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  border-color: #1d4ed8;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(29, 78, 216, 0.12);
+}
+
+/* Icon circle */
+.icon-circle {
+  background: linear-gradient(135deg, #1d4ed815, #3b82f615);
+  border: 1px solid #1d4ed825;
+}
+
+/* Step line */
+.step-line {
+  background: linear-gradient(180deg, #1d4ed8, #3b82f6);
+}
+
+/* Mobile menu transition */
+.mobile-menu {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trustpilot green */
+.tp-green { color: #00b67a; }
+.tp-bg { background: #00b67a; }
+
+/* Page transitions */
+.page-enter {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
