@@ -304,3 +304,57 @@ export const STEPS = [
     icon: '🏆',
   },
 ]
+
+export const FAQS_HOME = [
+  {
+    q: 'Do I need any previous experience to enrol?',
+    a: 'No prior experience is needed for most of our courses. The SIA Door Supervisor and Security Guard courses are open to anyone who meets the basic eligibility criteria (aged 18+, right to work in UK).',
+  },
+  {
+    q: 'How long does training take?',
+    a: 'Course durations vary. Security Guard training is typically 4 weeks, Door Supervisor 6 weeks, and CCTV around 2 weeks. First Aid courses can be completed in just 1 day.',
+  },
+  {
+    q: 'Are your courses accredited?',
+    a: 'Yes. All our security courses are BTEC Level 2/3 accredited and SIA-approved. First Aid courses are HSE compliant. All qualifications are nationally recognised.',
+  },
+  {
+    q: 'How long does it take to receive my SIA licence?',
+    a: 'Once your application is submitted to the SIA (Security Industry Authority), it typically takes 6–8 weeks to receive your licence, subject to DBS checks and identity verification.',
+  },
+  {
+    q: 'Do you offer payment plans?',
+    a: 'Yes! We offer flexible payment plans including monthly instalments for most courses. Contact us to discuss your options.',
+  },
+  {
+    q: 'Where are your training centres located?',
+    a: 'We have over 120 training locations across the UK, including London, Birmingham, Manchester, Leeds, Liverpool, Glasgow, Cardiff, and Belfast.',
+  },
+]
+
+export const TRAINERS = [
+  {
+    name: 'Johnny Pirate',
+    rating: 5,
+    image: '/trainers/johnny.jpg',
+    specialty: 'Door Supervisor & Close Protection',
+  },
+  {
+    name: 'Claudette Stewart',
+    rating: 5,
+    image: '/trainers/claudette.jpg',
+    specialty: 'Security Guard & CCTV',
+  },
+  {
+    name: 'Zowie Jennings',
+    rating: 5,
+    image: '/trainers/zowie.jpg',
+    specialty: 'First Aid & Health & Safety',
+  },
+  {
+    name: 'Dave Watts',
+    rating: 5,
+    image: '/trainers/dave.jpg',
+    specialty: 'SIA Licensing & Compliance',
+  },
+]

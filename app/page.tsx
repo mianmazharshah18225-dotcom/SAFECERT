@@ -7,6 +7,8 @@ import Testimonials from '@/components/Testimonials'
 import TrustBar from '@/components/TrustBar'
 import CTASection from '@/components/CTASection'
 import LocationsStrip from '@/components/LocationsStrip'
+import TrainersSection from '@/components/TrainersSection'
+import FAQSection from '@/components/FAQSection'
 
 export default function HomePage() {
   return (
@@ -18,7 +20,9 @@ export default function HomePage() {
       <PopularCourses />
       <HowItWorks />
       <LocationsStrip />
+      <TrainersSection />
       <Testimonials />
+      <FAQSection />
       <CTASection />
     </>
   )
