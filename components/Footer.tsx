@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Shield, Phone, Mail, MapPin, Star } from 'lucide-react'
-import { COMPANY, COURSES, LICENCES, CATEGORIES } from '@/lib/data'
+import { COMPANY, COURSES, CATEGORIES } from '@/lib/data'
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-display text-2xl font-bold mb-1">Ready to Start Your Career?</h3>
-            <p className="text-white/80">Join 50,000+ students who trained with SafeCert Skills Ltd</p>
+            <p className="text-white/80">Join 5,000+ students who trained with SafeCert Skills Ltd</p>
           </div>
           <div className="flex gap-4">
             <Link href="/courses" className="px-6 py-3 bg-white text-primary-800 font-bold rounded-xl hover:bg-gray-100 transition-colors">
@@ -25,7 +25,7 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
@@ -38,8 +38,8 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              UK's leading provider of security training, licensing and professional certifications. 
-              Accredited by BTEC, SIA approved, and trusted by over 50,000 students.
+              Professional training provider in Luton offering First Aid, Food & Hygiene, and Health & Safety courses.
+              Nationally accredited certifications trusted by over 5,000 students.
             </p>
             {/* Trustpilot */}
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">
@@ -75,7 +75,7 @@ export default function Footer() {
           <div>
             <h4 className="font-display font-bold text-sm tracking-widest uppercase text-white/40 mb-4">Courses</h4>
             <ul className="space-y-3">
-              {COURSES.slice(0, 6).map(course => (
+              {COURSES.map(course => (
                 <li key={course.id}>
                   <Link href={course.href} className="text-sm text-white/70 hover:text-gold-400 transition-colors">
                     {course.title}
@@ -90,20 +90,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Licences */}
-          <div>
-            <h4 className="font-display font-bold text-sm tracking-widest uppercase text-white/40 mb-4">Licences</h4>
-            <ul className="space-y-3">
-              {LICENCES.map(lic => (
-                <li key={lic.id}>
-                  <Link href={lic.href} className="text-sm text-white/70 hover:text-gold-400 transition-colors">
-                    {lic.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Company */}
           <div>
             <h4 className="font-display font-bold text-sm tracking-widest uppercase text-white/40 mb-4">Company</h4>
@@ -111,11 +97,8 @@ export default function Footer() {
               {[
                 { label: 'About Us', href: '/about' },
                 { label: 'Careers', href: '/careers' },
-                { label: 'Locations', href: '/locations' },
-                { label: 'Blog', href: '/blog' },
                 { label: 'Contact Us', href: '/contact' },
                 { label: 'FAQs', href: '/faqs' },
-                { label: 'Become a Partner', href: '/partners' },
               ].map(link => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-white/70 hover:text-gold-400 transition-colors">
@@ -132,7 +115,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} SafeCert Skills Ltd. All rights reserved. Company No. 12345678 | SIA Approved Training Provider
+            © {new Date().getFullYear()} SafeCert Skills Ltd. All rights reserved. Company No. 12345678 | Accredited Training Provider
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Complaints'].map(link => (
