@@ -35,10 +35,10 @@ export default function TrainersSection() {
           {/* Right side - Content */}
           <div className="text-white">
             <h2 className="font-display text-4xl md:text-5xl font-extrabold mb-6">
-              Meet our security trainers
+              Meet our professional trainers
             </h2>
             <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed">
-              They've done the job. They know how to get you ready to work in security.
+              They've done the job. They know how to get you ready for your career.
             </p>
             <Link
               href="/about"

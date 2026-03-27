@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone, ChevronDown, Shield, Star } from 'lucide-react'
-import { CATEGORIES, COURSES, LICENCES, COMPANY } from '@/lib/data'
+import { CATEGORIES, COURSES, COMPANY } from '@/lib/data'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,9 +17,6 @@ export default function Navbar() {
 
   const navItems = [
     { label: 'Courses', key: 'courses' },
-    { label: 'Licences', key: 'licences' },
-    { label: 'Locations', key: 'locations' },
-    { label: 'Careers', href: '/careers' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ]
@@ -174,64 +171,6 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* Mega Menu — Licences */}
-        {activeMenu === 'licences' && (
-          <div className="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-2xl shadow-gray-900/10 z-50">
-            <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-3 gap-8">
-              <div className="col-span-2">
-                <p className="text-xs font-700 tracking-widest text-primary-600 uppercase mb-4">Available Licences</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {LICENCES.map(lic => (
-                    <Link
-                      key={lic.id}
-                      href={lic.href}
-                      className="flex items-center gap-2.5 p-2.5 rounded-lg hover:bg-primary-50 transition-colors group"
-                    >
-                      <span className="text-xl">{lic.icon}</span>
-                      <div>
-                        <p className="text-sm font-medium text-gray-700 group-hover:text-primary-600">{lic.title}</p>
-                        <p className="text-xs text-gray-400">{lic.validity}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-                <p className="text-xs tracking-widest uppercase text-amber-600 mb-2 font-bold">Quick Guide</p>
-                <h3 className="font-display font-bold text-lg text-gray-900 mb-2">How to Get Your SIA Licence?</h3>
-                <p className="text-sm text-gray-600 mb-4">Step-by-step guide from training to applying for your licence.</p>
-                <Link href="/licences" className="inline-block px-4 py-2 bg-primary-600 text-white text-sm font-bold rounded-lg hover:bg-primary-700 transition-colors">
-                  View Guide
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Mega Menu — Locations */}
-        {activeMenu === 'locations' && (
-          <div className="mega-menu absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-2xl shadow-gray-900/10 z-50">
-            <div className="max-w-7xl mx-auto px-4 py-8">
-              <p className="text-xs font-700 tracking-widest text-primary-600 uppercase mb-4">Training Locations Across the UK</p>
-              <div className="grid grid-cols-6 gap-2">
-                {['London', 'Birmingham', 'Manchester', 'Leeds', 'Liverpool', 'Sheffield',
-                  'Bristol', 'Leicester', 'Coventry', 'Nottingham', 'Newcastle', 'Glasgow',
-                  'Edinburgh', 'Cardiff', 'Belfast', 'Southampton', 'Reading', 'Brighton'].map(loc => (
-                  <Link
-                    key={loc}
-                    href={`/locations/${loc.toLowerCase().replace(' ', '-')}`}
-                    className="text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors"
-                  >
-                    {loc}
-                  </Link>
-                ))}
-              </div>
-              <Link href="/locations" className="inline-flex items-center gap-1 text-sm text-primary-600 font-medium mt-4 hover:gap-2 transition-all">
-                View all 120+ locations →
-              </Link>
-            </div>
-          </div>
-        )}
 
         {/* Mobile menu */}
         {isOpen && (

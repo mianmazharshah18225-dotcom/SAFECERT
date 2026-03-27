@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Clock, Tag, CheckCircle, Star, ArrowRight } from 'lucide-react'
 import { COURSES } from '@/lib/data'
 
@@ -29,26 +30,36 @@ export default function PopularCourses() {
               href={course.href}
               className="course-card bg-white rounded-2xl overflow-hidden group"
             >
-              {/* Card header */}
-              <div className="bg-gradient-to-br from-primary-900 to-primary-700 p-6 relative overflow-hidden">
+              {/* Card header with image */}
+              <div className="relative h-48 overflow-hidden">
                 {course.popular && (
-                  <div className="absolute top-4 right-4 bg-gold-500 text-dark-900 text-xs font-bold px-2.5 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 bg-gold-500 text-dark-900 text-xs font-bold px-2.5 py-1 rounded-full z-10">
                     🔥 Popular
                   </div>
                 )}
-                <div className="text-4xl mb-3">{course.icon}</div>
-                <h3 className="font-display text-xl font-bold text-white mb-1 leading-tight group-hover:text-gold-300 transition-colors">
-                  {course.title}
-                </h3>
-                <div className="flex items-center gap-3 mt-3">
-                  <span className="flex items-center gap-1.5 text-white/70 text-xs">
-                    <Clock className="w-3.5 h-3.5" />
-                    {course.duration}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-white/70 text-xs">
-                    <Tag className="w-3.5 h-3.5" />
-                    {course.level}
-                  </span>
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="text-3xl mb-2">{course.icon}</div>
+                  <h3 className="font-display text-xl font-bold text-white mb-1 leading-tight group-hover:text-gold-300 transition-colors">
+                    {course.title}
+                  </h3>
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="flex items-center gap-1.5 text-white/90 text-xs">
+                      <Clock className="w-3.5 h-3.5" />
+                      {course.duration}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-white/90 text-xs">
+                      <Tag className="w-3.5 h-3.5" />
+                      {course.level}
+                    </span>
+                  </div>
                 </div>
               </div>
 

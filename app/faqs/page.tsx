@@ -8,19 +8,19 @@ const FAQS = [
     items: [
       {
         q: 'Do I need any previous experience to enrol?',
-        a: 'No prior experience is needed for most of our courses. The SIA Door Supervisor and Security Guard courses are open to anyone who meets the basic eligibility criteria (aged 18+, right to work in UK).',
+        a: 'No prior experience is needed for any of our courses. Our First Aid, Food & Hygiene, and Health & Safety courses are open to anyone aged 18+ who wants to develop professional skills.',
       },
       {
         q: 'How long does training take?',
-        a: 'Course durations vary. Security Guard training is typically 4 weeks, Door Supervisor 6 weeks, and CCTV around 2 weeks. First Aid courses can be completed in just 1 day.',
+        a: 'All our courses run for 1.5 years with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
       },
       {
         q: 'Are your courses accredited?',
-        a: 'Yes. All our security courses are BTEC Level 2/3 accredited and SIA-approved. First Aid courses are HSE compliant. All qualifications are nationally recognised.',
+        a: 'Yes. All our courses are nationally accredited and recognised by employers across the UK. You will receive professional certification upon completion.',
       },
       {
-        q: 'Do you offer online or e-learning options?',
-        a: 'Yes! Many of our courses have an e-learning component allowing you to study at your own pace before attending classroom and practical sessions.',
+        q: 'What subjects are covered in each course?',
+        a: 'First Aid covers CPR, emergency response, and patient care. Food & Hygiene covers food safety standards and HACCP principles. Health & Safety covers risk assessment and workplace safety management.',
       },
       {
         q: 'What happens if I fail my exam?',
@@ -29,23 +29,19 @@ const FAQS = [
     ],
   },
   {
-    category: 'SIA Licences',
+    category: 'Career Opportunities',
     items: [
       {
-        q: 'How long does it take to receive my SIA licence?',
-        a: 'Once your application is submitted to the SIA (Security Industry Authority), it typically takes 6–8 weeks to receive your licence, subject to DBS checks and identity verification.',
+        q: 'What career opportunities are available after completing these courses?',
+        a: 'Our courses prepare you for roles such as First Aid Instructor, Emergency Care Assistant, Food Safety Officer, Environmental Health Officer, Health & Safety Advisor, and Safety Manager.',
       },
       {
-        q: 'How much does an SIA licence cost?',
-        a: 'The SIA licence application fee is £190, payable directly to the SIA. This is separate from your course fees with SafeCert.',
+        q: 'Do you offer job placement support?',
+        a: 'Yes! We provide career guidance and job placement support to help you find employment opportunities in your chosen field after completing your course.',
       },
       {
-        q: 'How long is an SIA licence valid for?',
-        a: 'SIA licences are valid for 3 years. After that, you will need to complete top-up training and renew your licence.',
-      },
-      {
-        q: 'Can I work while my SIA licence application is being processed?',
-        a: 'No. You must hold a valid SIA licence before working in a licensable role. However, you can work in non-licensable security roles while waiting.',
+        q: 'Will I receive a certificate?',
+        a: 'Yes, all students who successfully complete their course will receive a nationally recognised professional certificate.',
       },
     ],
   },
@@ -54,11 +50,11 @@ const FAQS = [
     items: [
       {
         q: 'How do I book a course?',
-        a: 'You can book online through our website, call us on 0800 123 4567, or visit one of our training centres. We recommend booking early as places fill up fast.',
+        a: 'You can book online through our website, call us on 0800 123 4567, or visit our training centre in Luton. We recommend booking early as places fill up fast.',
       },
       {
         q: 'Do you offer payment plans?',
-        a: 'Yes! We offer flexible payment plans including monthly instalments for most courses. Contact us to discuss your options.',
+        a: 'Yes! We offer flexible payment plans including monthly instalments for all courses. Contact us to discuss your options.',
       },
       {
         q: 'What is your cancellation and refund policy?',
@@ -71,15 +67,15 @@ const FAQS = [
     ],
   },
   {
-    category: 'Locations',
+    category: 'Location & Schedule',
     items: [
       {
-        q: 'Where are your training centres located?',
-        a: 'We have over 120 training locations across the UK, including London, Birmingham, Manchester, Leeds, Liverpool, Glasgow, Cardiff, and Belfast. Check our Locations page for the full list.',
+        q: 'Where is your training centre located?',
+        a: 'Our training centre is located in Luton, United Kingdom. We offer a modern, fully-equipped facility for all our courses.',
       },
       {
-        q: 'Do you offer courses near me?',
-        a: 'With 120+ locations nationwide, there\'s almost certainly a centre near you. Use our location search to find the closest training centre to your postcode.',
+        q: 'What are the class timings?',
+        a: 'Classes run from 8:00 AM to 6:00 PM. The course duration is 1.5 years with a structured schedule to ensure comprehensive learning.',
       },
     ],
   },

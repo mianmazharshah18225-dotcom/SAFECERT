@@ -9,9 +9,9 @@ export default function Hero() {
   const [location, setLocation] = useState('')
 
   const highlights = [
-    'SIA Approved Provider',
+    'Nationally Accredited',
     '98% Pass Rate',
-    'Job Placement Support',
+    'Career Support',
     'Flexible Payment Plans',
   ]
 
@@ -29,7 +29,7 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold-500/15 border border-gold-500/30 text-gold-400 text-sm font-semibold px-4 py-2 rounded-full mb-6 animate-fade-up">
             <Star className="w-4 h-4 fill-gold-400" />
-            UK's #1 Security Training Provider
+            Professional Training Provider in Luton
             <ChevronRight className="w-4 h-4" />
           </div>
 
@@ -48,8 +48,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed animate-fade-up animate-delay-200">
-            SafeCert Skills Ltd — UK's leading security training and certification provider. 
-            SIA-approved courses across 120+ locations nationwide.
+            SafeCert Skills Ltd — Professional training and certification provider in Luton.
+            Accredited courses in First Aid, Food & Hygiene, and Health & Safety.
           </p>
 
           {/* Search box */}
@@ -58,7 +58,7 @@ export default function Hero() {
               <Search className="w-5 h-5 text-gray-400 flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Search courses (e.g. Door Supervisor, CCTV...)"
+                placeholder="Search courses (e.g. First Aid, Food & Hygiene...)"
                 className="w-full text-gray-800 placeholder-gray-400 outline-none text-sm"
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
@@ -69,7 +69,7 @@ export default function Hero() {
               <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Location (e.g. London, Manchester...)"
+                placeholder="Location: Luton"
                 className="w-full text-gray-800 placeholder-gray-400 outline-none text-sm"
                 value={location}
                 onChange={e => setLocation(e.target.value)}
