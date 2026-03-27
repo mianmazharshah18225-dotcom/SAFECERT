@@ -3,12 +3,9 @@ import { CATEGORIES } from '@/lib/data'
 
 export default function CategoryCards() {
   const categoryDescriptions: Record<string, string> = {
-    security: 'SIA Door Supervisor, Security Guard, CCTV & more',
-    alcohol: 'Personal Licence (APLH) & DPS training',
-    construction: 'CSCS Green Card & site safety courses',
-    firstaid: 'EFAW, FAW Level 3 & Paediatric First Aid',
-    elearning: 'Online courses — study from anywhere, anytime',
-    driving: 'Driving licence & advanced driver training',
+    firstaid: '1.5 Year Program | 8am-6pm Daily',
+    foodhygiene: '1.5 Year Program | 8am-6pm Daily',
+    healthsafety: '1.5 Year Program | 8am-6pm Daily',
   }
 
   return (
@@ -26,22 +23,24 @@ export default function CategoryCards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {CATEGORIES.map((cat, i) => (
-            <Link
-              key={cat.id}
-              href={cat.href}
-              className="card-hover group bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-sm"
-            >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform`}>
-                {cat.icon}
-              </div>
-              <h3 className="font-display font-bold text-gray-900 mb-1">{cat.name}</h3>
-              <p className="text-xs text-gray-400 leading-snug hidden lg:block">
-                {categoryDescriptions[cat.id]}
-              </p>
-            </Link>
-          ))}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+            {CATEGORIES.map((cat, i) => (
+              <Link
+                key={cat.id}
+                href={cat.href}
+                className="card-hover group bg-white rounded-2xl p-8 text-center border border-gray-100 shadow-sm"
+              >
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-3xl mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform`}>
+                  {cat.icon}
+                </div>
+                <h3 className="font-display font-bold text-gray-900 mb-2 text-lg">{cat.name}</h3>
+                <p className="text-xs text-gray-500 leading-snug">
+                  {categoryDescriptions[cat.id]}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

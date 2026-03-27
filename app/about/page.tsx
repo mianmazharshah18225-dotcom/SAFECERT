@@ -4,24 +4,24 @@ import { COMPANY } from '@/lib/data'
 
 export default function AboutPage() {
   const values = [
-    { icon: '🎯', title: 'Excellence', desc: 'We maintain a 98% pass rate through expert instruction and comprehensive course materials.' },
+    { icon: '🎯', title: 'Excellence', desc: 'We maintain a 98% pass rate through expert instruction and comprehensive 1.5 year programs.' },
     { icon: '🤝', title: 'Support', desc: 'From enrolment to employment — our team supports every student every step of the way.' },
-    { icon: '🏆', title: 'Accreditation', desc: 'All courses are fully accredited by BTEC and approved by the SIA and relevant awarding bodies.' },
-    { icon: '💡', title: 'Innovation', desc: 'We continually update our courses to reflect the latest legislation, technology and best practices.' },
+    { icon: '🏆', title: 'Accreditation', desc: 'All courses are nationally accredited and recognised by employers across the UK.' },
+    { icon: '💡', title: 'Innovation', desc: 'We continually update our courses to reflect the latest industry standards and best practices.' },
   ]
 
   const team = [
     { name: 'James Harrison', role: 'Chief Executive Officer', emoji: '👨‍💼' },
     { name: 'Sarah Mitchell', role: 'Head of Training', emoji: '👩‍🏫' },
-    { name: 'David Osei', role: 'Senior Security Instructor', emoji: '👨‍🏫' },
+    { name: 'David Osei', role: 'Senior Instructor', emoji: '👨‍🏫' },
     { name: 'Priya Patel', role: 'Student Services Manager', emoji: '👩‍💼' },
   ]
 
   const accreditations = [
-    { icon: '🛡️', name: 'SIA Approved', desc: 'Security Industry Authority' },
-    { icon: '🎓', name: 'BTEC Accredited', desc: 'Pearson / Edexcel' },
     { icon: '🏥', name: 'HSE Compliant', desc: 'Health & Safety Executive' },
-    { icon: '🔨', name: 'CITB Approved', desc: 'Construction Industry Training Board' },
+    { icon: '🎓', name: 'Nationally Accredited', desc: 'UK Recognised Qualifications' },
+    { icon: '✅', name: 'Industry Recognised', desc: 'Employer Approved' },
+    { icon: '🏆', name: '98% Pass Rate', desc: 'Proven Success Record' },
   ]
 
   return (
@@ -34,12 +34,11 @@ export default function AboutPage() {
               About Us
             </span>
             <h1 className="font-display text-5xl font-extrabold text-white mb-6">
-              Britain's Most Trusted Training Provider
+              Professional Training in Luton
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
-              SafeCert Skills Ltd has been training and certifying security professionals, 
-              hospitality workers, and construction labourers across the UK for over 15 years. 
-              We combine expert instruction with genuine care for our students.
+              SafeCert Skills Ltd provides professional training in First Aid, Food & Hygiene, and Health & Safety.
+              Our comprehensive 1.5 year programs in Luton combine expert instruction with genuine care for our students.
             </p>
           </div>
         </div>

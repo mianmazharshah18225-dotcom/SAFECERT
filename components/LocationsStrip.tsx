@@ -1,42 +1,72 @@
 import Link from 'next/link'
-import { MapPin, ArrowRight } from 'lucide-react'
-import { UK_LOCATIONS } from '@/lib/data'
+import { MapPin, Clock, Phone } from 'lucide-react'
+import { COMPANY } from '@/lib/data'
 
 export default function LocationsStrip() {
   return (
     <section className="py-16 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-primary-600" />
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left: Location Info */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-primary-600" />
+              </div>
+              <div>
+                <h2 className="font-display text-3xl font-bold text-gray-900">Our Training Centre</h2>
+                <p className="text-gray-500">Located in Luton, United Kingdom</p>
+              </div>
             </div>
-            <div>
-              <h2 className="font-display text-2xl font-bold text-gray-900">120+ UK Training Locations</h2>
-              <p className="text-gray-500 text-sm">Find a course near you</p>
-            </div>
-          </div>
-          <Link href="/locations" className="flex items-center gap-2 text-primary-600 font-semibold hover:gap-3 transition-all text-sm">
-            View All Locations <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
 
-        <div className="flex flex-wrap gap-2">
-          {UK_LOCATIONS.map(loc => (
+            <div className="space-y-4 bg-gray-50 rounded-2xl p-6">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-gray-900">Address</p>
+                  <p className="text-gray-600">{COMPANY.address}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-gray-900">Operating Hours</p>
+                  <p className="text-gray-600">{COMPANY.timing}</p>
+                  <p className="text-sm text-gray-500">Monday to Saturday</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold text-gray-900">Contact</p>
+                  <a href={`tel:${COMPANY.phone}`} className="text-primary-600 hover:underline">
+                    {COMPANY.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <Link
-              key={loc}
-              href={`/locations/${loc.toLowerCase().replace(' ', '-')}`}
-              className="px-4 py-2 bg-gray-50 hover:bg-primary-50 border border-gray-200 hover:border-primary-300 rounded-full text-sm text-gray-600 hover:text-primary-700 font-medium transition-all"
+              href="/contact"
+              className="inline-block mt-6 px-6 py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition-colors"
             >
-              {loc}
+              Get Directions
             </Link>
-          ))}
-          <Link
-            href="/locations"
-            className="px-4 py-2 bg-primary-600 text-white rounded-full text-sm font-semibold hover:bg-primary-700 transition-colors"
-          >
-            +90 more →
-          </Link>
+          </div>
+
+          {/* Right: Map */}
+          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39406.85663402998!2d-0.4485624!3d51.8787119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763d8e0de89725%3A0x2a5bbf8785c0b16a!2sLuton%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Luton Training Centre Location"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -17,6 +17,8 @@ export default function Navbar() {
 
   const navItems = [
     { label: 'Courses', key: 'courses' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Blog', href: '/blog' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ]

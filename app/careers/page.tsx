@@ -4,10 +4,9 @@ import { CAREERS, COURSES } from '@/lib/data'
 
 export default function CareersPage() {
   const categories = [
-    { id: 'security', label: 'Security', icon: '🛡️' },
-    { id: 'alcohol', label: 'Alcohol & Hospitality', icon: '🍺' },
-    { id: 'construction', label: 'Construction', icon: '🔨' },
     { id: 'firstaid', label: 'First Aid', icon: '🏥' },
+    { id: 'foodhygiene', label: 'Food & Hygiene', icon: '🍽️' },
+    { id: 'healthsafety', label: 'Health & Safety', icon: '⚠️' },
   ]
 
   return (
@@ -22,8 +21,8 @@ export default function CareersPage() {
             Explore Career Opportunities
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            From door supervisor to security manager — discover the career pathways available 
-            after training with SafeCert Skills Ltd.
+            From First Aid Instructor to Safety Manager — discover the career pathways available
+            after completing your 1.5 year training with SafeCert Skills Ltd in Luton.
           </p>
         </div>
       </div>
@@ -32,7 +31,7 @@ export default function CareersPage() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6 mb-16">
           {[
-            { icon: <Users className="w-6 h-6" />, value: '50,000+', label: 'Graduates Placed' },
+            { icon: <Users className="w-6 h-6" />, value: '5,000+', label: 'Graduates Placed' },
             { icon: <TrendingUp className="w-6 h-6" />, value: '95%', label: 'Employment Rate' },
             { icon: <Star className="w-6 h-6" />, value: '£35k+', label: 'Avg. Senior Salary' },
           ].map((s, i) => (
