@@ -6,6 +6,7 @@ Professional Next.js website for SafeCert Skills Ltd offering First Aid, Food & 
 
 - **3 Professional Courses**: First Aid, Food & Hygiene, Health & Safety
 - **1.5 Year Programs**: 8am-6pm daily in Luton
+- **Stripe Payments**: Secure online enrollment (Test Mode ready)
 - **Blog System**: 6 articles with search and filtering
 - **Career Pathways**: Job opportunities showcase
 - **SEO Optimized**: Meta tags, structured data, sitemap
@@ -102,6 +103,7 @@ Then push to GitHub → Auto-deploys to Vercel!
 
 - **`QUICK-START.md`** - Deploy in 10 minutes
 - **`DEPLOYMENT-GUIDE.md`** - Complete deployment guide
+- **`STRIPE-SETUP.md`** - Payment integration setup (Test Mode)
 - **`SEO-IMPLEMENTATION.md`** - SEO setup and tips
 
 ---
@@ -141,6 +143,15 @@ After deployment, find & replace in all files:
 ### Environment Variables
 
 See `.env.example` for available variables.
+
+**Required for Payments:**
+```bash
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here
+STRIPE_SECRET_KEY=sk_test_your_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+```
+
+See `STRIPE-SETUP.md` for detailed setup instructions.
 
 ---
 

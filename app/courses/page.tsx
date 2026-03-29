@@ -143,9 +143,13 @@ export default function CoursesPage() {
                       <div className="text-xs text-gray-400 line-through">{course.originalPrice}</div>
                       <div className="text-2xl font-display font-extrabold text-primary-700">{course.price}</div>
                     </div>
-                    <div className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold">
-                      Book Now →
-                    </div>
+                    <Link
+                      href={`/checkout?course=${course.id}`}
+                      className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Enroll Now →
+                    </Link>
                   </div>
                 </div>
               </Link>

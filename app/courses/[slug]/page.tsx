@@ -49,7 +49,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 </div>
                 <div className="glass-card px-4 py-2 rounded-xl flex items-center gap-2 text-white text-sm">
                   <MapPin className="w-4 h-4 text-gold-400" />
-                  120+ UK Locations
+                  Luton, UK
                 </div>
               </div>
             </div>
@@ -73,8 +73,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 ))}
               </div>
 
-              <Link href="/contact" className="btn-gold w-full block text-center py-4 rounded-xl font-bold text-dark-900 mb-3">
-                Book This Course
+              <Link href={`/checkout?course=${course.id}`} className="btn-gold w-full block text-center py-4 rounded-xl font-bold text-dark-900 mb-3">
+                Enroll Now
               </Link>
               <a href={`tel:${COMPANY.phone}`} className="btn-primary w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm">
                 <Phone className="w-4 h-4" />
@@ -83,7 +83,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
 
               <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2 justify-center text-xs text-gray-400">
                 <Shield className="w-3.5 h-3.5 text-primary-400" />
-                SIA Approved · Secure Booking
+                Secure Payment · Accredited Course
               </div>
             </div>
           </div>
@@ -152,8 +152,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 {[
                   { label: 'Duration', value: course.duration },
                   { label: 'Level', value: course.level },
-                  { label: 'Locations', value: '120+ across UK' },
-                  { label: 'Start Dates', value: 'Every week' },
+                  { label: 'Location', value: 'Luton, UK' },
+                  { label: 'Timing', value: '8:00 AM - 6:00 PM' },
                   { label: 'Delivery', value: 'Classroom + Practical' },
                   { label: 'Certificate', value: 'Nationally Recognised' },
                 ].map(({ label, value }) => (
