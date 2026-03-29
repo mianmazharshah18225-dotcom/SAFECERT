@@ -1,120 +1,173 @@
-# SafeCert Skills Ltd — Website
+# SafeCert Skills Ltd - Professional Training Website
 
-## 🚀 Vercel Deploy Guide (Step by Step)
+Professional Next.js website for SafeCert Skills Ltd offering First Aid, Food & Hygiene, and Health & Safety training in Luton, UK.
 
-### Step 1: Install Dependencies
+## ✨ Features
+
+- **3 Professional Courses**: First Aid, Food & Hygiene, Health & Safety
+- **1.5 Year Programs**: 8am-6pm daily in Luton
+- **Blog System**: 6 articles with search and filtering
+- **Career Pathways**: Job opportunities showcase
+- **SEO Optimized**: Meta tags, structured data, sitemap
+- **Fully Responsive**: Mobile-first design
+- **Fast Performance**: Next.js 16 with image optimization
+
+## 🚀 Quick Deploy to Vercel (10 Minutes)
+
+### 1. Push to GitHub
 ```bash
-npm install
-```
-
-### Step 2: Run Locally (Test)
-```bash
-npm run dev
-```
-Open http://localhost:3000 to check the site.
-
-### Step 3: Create GitHub Repository
-1. Go to https://github.com → New Repository
-2. Name it: `safecert-website`
-3. Make it Private or Public (your choice)
-4. Click "Create Repository"
-
-### Step 4: Push Code to GitHub
-```bash
+cd /Users/laptop/Desktop/safecert
 git init
 git add .
-git commit -m "Initial SafeCert website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/safecert-website.git
+git commit -m "Initial commit"
+git remote add origin https://github.com/YOUR-USERNAME/safecert-skills.git
 git push -u origin main
 ```
 
-### Step 5: Deploy to Vercel
-1. Go to https://vercel.com
-2. Sign in with GitHub
-3. Click **"New Project"**
-4. Select your `safecert-website` repository
-5. Framework: **Next.js** (auto-detected)
-6. Click **"Deploy"** ✅
+### 2. Deploy on Vercel
+1. Go to https://vercel.com (sign up with GitHub)
+2. Click "Add New" → "Project"
+3. Import your `safecert-skills` repository
+4. Click "Deploy"
+5. Done! Live at: `https://safecert-skills.vercel.app`
 
-### Done! Your site will be live at:
-`https://safecert-website.vercel.app`
+**For detailed instructions:** See `QUICK-START.md` or `DEPLOYMENT-GUIDE.md`
+
+---
+
+## 💻 Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+# Open http://localhost:3000
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
+```
 
 ---
 
 ## 📁 Project Structure
+
 ```
 safecert/
-├── app/
-│   ├── layout.tsx          ← Root layout (Navbar + Footer)
-│   ├── page.tsx            ← Homepage
-│   ├── globals.css         ← Global styles
-│   ├── courses/
-│   │   ├── page.tsx        ← All courses listing
-│   │   └── [slug]/
-│   │       └── page.tsx    ← Individual course page
-│   ├── licences/
-│   │   ├── page.tsx        ← All licences
-│   │   └── [slug]/
-│   │       └── page.tsx    ← Individual licence page
-│   ├── locations/
-│   │   └── page.tsx        ← UK locations
-│   ├── careers/
-│   │   └── page.tsx        ← Career pathways
-│   ├── about/
-│   │   └── page.tsx        ← About company
-│   ├── contact/
-│   │   └── page.tsx        ← Contact form
-│   └── not-found.tsx       ← 404 page
-├── components/
-│   ├── Navbar.tsx          ← Mega menu navbar
-│   ├── Footer.tsx          ← Full footer
-│   ├── Hero.tsx            ← Homepage hero
-│   ├── CategoryCards.tsx   ← Course categories
-│   ├── StatsBar.tsx        ← Company stats
-│   ├── PopularCourses.tsx  ← Course cards
-│   ├── HowItWorks.tsx      ← Steps section
-│   ├── LocationsStrip.tsx  ← Cities strip
-│   ├── Testimonials.tsx    ← Reviews
-│   ├── TrustBar.tsx        ← Trust badges
-│   └── CTASection.tsx      ← Call to action
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Home page
+│   ├── layout.tsx         # Root layout
+│   ├── courses/           # Courses pages
+│   ├── blog/              # Blog pages
+│   ├── careers/           # Careers page
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   └── faqs/              # FAQs page
+├── components/            # React components
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── PopularCourses.tsx
+│   ├── TrainersSection.tsx
+│   └── ...
 ├── lib/
-│   └── data.ts             ← ALL your content (edit here!)
-├── package.json
-├── tailwind.config.js
-├── next.config.js
-└── tsconfig.json
+│   └── data.ts           # ALL content here!
+├── public/               # Static files
+└── styles/              # Global styles
 ```
-
-## ✏️ How to Edit Content
-
-All your content (courses, company name, phone, prices, etc.) is in ONE file:
-```
-lib/data.ts
-```
-
-Just edit that file to:
-- Change company phone/email
-- Add/remove courses
-- Update prices
-- Add new locations
-- Edit testimonials
 
 ---
 
-## 🎨 Color Scheme
-- **Primary (Dark Blue):** `#1d4ed8` / `#0f2a8a`
-- **Gold Accent:** `#f59e0b`
-- **Background:** White / Gray-50
-- **Dark (Footer):** `#020817`
+## ✏️ Edit Content
 
-To change colors, edit `tailwind.config.js` → `colors` section.
+**Everything is in ONE file:** `lib/data.ts`
+
+Update:
+- Company info (phone, email, address)
+- Courses (title, price, description)
+- Blog posts
+- Testimonials
+- FAQs
+- Trainers
+
+Then push to GitHub → Auto-deploys to Vercel!
 
 ---
 
-## 📦 Tech Stack
-- **Next.js 14** — Framework
-- **Tailwind CSS** — Styling
-- **TypeScript** — Type safety
-- **Lucide React** — Icons
-- **Vercel** — Hosting
+## 📄 Documentation
+
+- **`QUICK-START.md`** - Deploy in 10 minutes
+- **`DEPLOYMENT-GUIDE.md`** - Complete deployment guide
+- **`SEO-IMPLEMENTATION.md`** - SEO setup and tips
+
+---
+
+## 🎨 Tech Stack
+
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **Vercel** - Hosting (recommended)
+
+---
+
+## 🌐 Pages
+
+- `/` - Home
+- `/courses` - All courses
+- `/courses/[slug]` - Individual courses
+- `/blog` - Blog listing
+- `/blog/[slug]` - Blog posts
+- `/careers` - Career opportunities
+- `/about` - Company info
+- `/contact` - Contact & location
+- `/faqs` - FAQ page
+
+---
+
+## 🔧 Configuration
+
+### Update Domain
+
+After deployment, find & replace in all files:
+- Find: `https://safecertskills.co.uk`
+- Replace: `https://your-domain.com`
+
+### Environment Variables
+
+See `.env.example` for available variables.
+
+---
+
+## 📊 SEO Features
+
+✅ Meta tags on all pages
+✅ Open Graph tags
+✅ Structured data (JSON-LD)
+✅ Sitemap.xml
+✅ Robots.txt
+✅ Optimized images
+✅ Fast loading
+
+---
+
+## 🆘 Support
+
+- **Deployment Issues?** See `DEPLOYMENT-GUIDE.md`
+- **Next.js Docs:** https://nextjs.org/docs
+- **Vercel Docs:** https://vercel.com/docs
+
+---
+
+## 📝 License
+
+Private - All rights reserved by SafeCert Skills Ltd
+
+---
+
+**Ready to deploy?** See `QUICK-START.md` for step-by-step guide!
