@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
       select: { amount: true },
     })
 
-    const totalRevenue = payments.reduce((sum: number, payment) => sum + payment.amount, 0)
+    const totalRevenue = payments.reduce((sum: number, payment: any) => sum + payment.amount, 0)
 
     return NextResponse.json({
       totalStudents,
