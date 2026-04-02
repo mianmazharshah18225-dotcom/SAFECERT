@@ -1,0 +1,145 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// User model for students, admins, and trainers
+model User {
+  id            String       @id @default(cuid())
+  email         String       @unique
+  password      String?      // Optional for OAuth
+  name          String
+  image         String?
+  role          Role         @default(STUDENT)
+  phone         String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  enrollments   Enrollment[]
+  progress      Progress[]
+
+  @@map("users")
+}
+
+// Course model
+model Course {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  title         String
+  description   String       @db.Text
+  price         Float
+  originalPrice Float?
+  duration      String
+  level         String
+  icon          String
+  image         String
+  features      String[]     // Array of features
+  isActive      Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  enrollments   Enrollment[]
+  progress      Progress[]
+
+  @@map("courses")
+}
+
+// Enrollment model - links users to courses
+model Enrollment {
+  id              String    @id @default(cuid())
+  studentId       String
+  student         User      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  courseId        String
+  course          Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  status          EnrollmentStatus @default(PENDING)
+  enrolledAt      DateTime  @default(now())
+  completedAt     DateTime?
+  stripeSessionId String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  payment         Payment?
+
+  @@unique([studentId, courseId]) // Prevent duplicate enrollments
+  @@map("enrollments")
+}
+
+// Payment model - tracks all payments
+model Payment {
+  id            String    @id @default(cuid())
+  enrollmentId  String    @unique
+  enrollment    Enrollment @relation(fields: [enrollmentId], references: [id], onDelete: Cascade)
+  stripeId      String    @unique
+  amount        Float
+  currency      String    @default("gbp")
+  status        PaymentStatus @default(PENDING)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("payments")
+}
+
+// Progress tracking model
+model Progress {
+  id                    String   @id @default(cuid())
+  studentId             String
+  student               User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  courseId              String
+  course                Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  completionPercentage  Int      @default(0)
+  currentModule         String?
+  lastAccessedAt        DateTime @default(now())
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@unique([studentId, courseId])
+  @@map("progress")
+}
+
+// Email notification log
+model EmailLog {
+  id          String   @id @default(cuid())
+  to          String
+  subject     String
+  type        EmailType
+  status      String   @default("sent")
+  sentAt      DateTime @default(now())
+
+  @@map("email_logs")
+}
+
+// Enums
+enum Role {
+  STUDENT
+  ADMIN
+  TRAINER
+}
+
+enum EnrollmentStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum EmailType {
+  WELCOME
+  ENROLLMENT_CONFIRMATION
+  PAYMENT_SUCCESS
+  COURSE_REMINDER
+  COURSE_COMPLETION
+}

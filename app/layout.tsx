@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Providers from '@/components/Providers'
 
 export const metadata: Metadata = {
   title: 'SafeCert Skills Ltd – Professional Training in Luton | First Aid, Food Hygiene & Health Safety',
@@ -64,11 +65,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="font-body antialiased">
-        <Navbar />
-        <main className="page-enter">
-          {children}
-        </main>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <main className="page-enter">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
