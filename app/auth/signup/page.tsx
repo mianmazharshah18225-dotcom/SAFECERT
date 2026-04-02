@@ -67,7 +67,7 @@ export default function SignUpPage() {
         setError('Account created but failed to sign in. Please try signing in manually.')
         setLoading(false)
       } else {
-        router.push('/dashboard')
+        router.push('/')
         router.refresh()
       }
     } catch (error) {

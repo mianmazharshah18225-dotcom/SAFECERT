@@ -1,19 +1,34 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, ChevronDown, Shield, Star } from 'lucide-react'
+import { useSession, signOut } from 'next-auth/react'
+import { Menu, X, Phone, ChevronDown, Shield, Star, User, LogOut, LayoutDashboard, UserCog } from 'lucide-react'
 import { CATEGORIES, COURSES, COMPANY } from '@/lib/data'
 
 export default function Navbar() {
+  const { data: session, status } = useSession()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [profileOpen, setProfileOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close profile dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (profileOpen && !target.closest('.profile-dropdown')) {
+        setProfileOpen(false)
+      }
+    }
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [profileOpen])
 
   const navItems = [
     { label: 'Courses', key: 'courses' },
@@ -98,20 +113,85 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA buttons */}
+            {/* Profile / Auth buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link
-                href="/courses"
-                className="px-5 py-2.5 text-sm font-semibold rounded-xl btn-primary"
-              >
-                Browse Courses
-              </Link>
-              <Link
-                href="/contact"
-                className="px-5 py-2.5 text-sm font-semibold rounded-xl btn-gold"
-              >
-                Book Now
-              </Link>
+              {status === 'loading' ? (
+                <div className="w-10 h-10 rounded-full bg-gray-200 animate-pulse" />
+              ) : session ? (
+                <div className="relative profile-dropdown">
+                  <button
+                    onClick={() => setProfileOpen(!profileOpen)}
+                    className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-gray-100 transition-all"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center text-white font-semibold shadow-md">
+                      {session.user.name?.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="text-left">
+                      <p className="text-sm font-semibold text-gray-900">{session.user.name}</p>
+                      <p className="text-xs text-gray-500">{session.user.role}</p>
+                    </div>
+                    <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${profileOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Profile Dropdown */}
+                  {profileOpen && (
+                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50">
+                      <div className="px-4 py-3 border-b border-gray-100">
+                        <p className="text-sm font-semibold text-gray-900">{session.user.name}</p>
+                        <p className="text-xs text-gray-500">{session.user.email}</p>
+                      </div>
+
+                      <Link
+                        href="/dashboard"
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                        onClick={() => setProfileOpen(false)}
+                      >
+                        <LayoutDashboard className="w-4 h-4" />
+                        Student Dashboard
+                      </Link>
+
+                      {session.user.role === 'ADMIN' && (
+                        <Link
+                          href="/admin"
+                          className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                          onClick={() => setProfileOpen(false)}
+                        >
+                          <UserCog className="w-4 h-4" />
+                          Admin Panel
+                        </Link>
+                      )}
+
+                      <div className="border-t border-gray-100 mt-2 pt-2">
+                        <button
+                          onClick={() => {
+                            setProfileOpen(false)
+                            signOut({ callbackUrl: '/' })
+                          }}
+                          className="flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors w-full text-left"
+                        >
+                          <LogOut className="w-4 h-4" />
+                          Sign Out
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <Link
+                    href="/auth/signin"
+                    className="px-5 py-2.5 text-sm font-semibold text-gray-700 hover:text-primary-600 transition-colors"
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/auth/signup"
+                    className="px-5 py-2.5 text-sm font-semibold rounded-xl btn-primary"
+                  >
+                    Get Started
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Mobile toggle */}
@@ -178,6 +258,48 @@ export default function Navbar() {
         {isOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl mobile-menu">
             <div className="max-w-7xl mx-auto px-4 py-6 space-y-1">
+              {session && (
+                <div className="mb-4 p-4 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center text-white font-bold text-lg">
+                      {session.user.name?.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{session.user.name}</p>
+                      <p className="text-sm text-gray-600">{session.user.email}</p>
+                    </div>
+                  </div>
+                  <Link
+                    href="/dashboard"
+                    className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 mb-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                    Student Dashboard
+                  </Link>
+                  {session.user.role === 'ADMIN' && (
+                    <Link
+                      href="/admin"
+                      className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-lg text-sm font-medium text-gray-700 hover:text-primary-600 mb-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <UserCog className="w-4 h-4" />
+                      Admin Panel
+                    </Link>
+                  )}
+                  <button
+                    onClick={() => {
+                      setIsOpen(false)
+                      signOut({ callbackUrl: '/' })
+                    }}
+                    className="flex items-center gap-2 px-4 py-2.5 bg-red-50 text-red-600 rounded-lg text-sm font-medium w-full"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Sign Out
+                  </button>
+                </div>
+              )}
+
               {navItems.map(item => (
                 <Link
                   key={item.label}
@@ -188,14 +310,17 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <div className="pt-4 flex flex-col gap-3">
-                <Link href="/courses" className="btn-primary text-center py-3 px-6 rounded-xl text-sm font-semibold" onClick={() => setIsOpen(false)}>
-                  Browse Courses
-                </Link>
-                <Link href="/contact" className="btn-gold text-center py-3 px-6 rounded-xl text-sm font-semibold" onClick={() => setIsOpen(false)}>
-                  Book Now
-                </Link>
-              </div>
+
+              {!session && (
+                <div className="pt-4 flex flex-col gap-3">
+                  <Link href="/auth/signin" className="btn-primary text-center py-3 px-6 rounded-xl text-sm font-semibold" onClick={() => setIsOpen(false)}>
+                    Sign In
+                  </Link>
+                  <Link href="/auth/signup" className="btn-gold text-center py-3 px-6 rounded-xl text-sm font-semibold" onClick={() => setIsOpen(false)}>
+                    Get Started
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}
