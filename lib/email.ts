@@ -1,7 +1,9 @@
 import { Resend } from 'resend'
 import { prisma } from './prisma'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null
 
 interface SendEmailParams {
   to: string
@@ -12,6 +14,12 @@ interface SendEmailParams {
 
 export async function sendEmail({ to, subject, html, type }: SendEmailParams) {
   try {
+    // Skip sending if Resend is not configured
+    if (!resend) {
+      console.warn('Resend API key not configured. Email not sent:', { to, subject, type })
+      return { success: false, error: 'Email service not configured' }
+    }
+
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL || 'SafeCert Skills <noreply@safecertskills.co.uk>',
       to: [to],
