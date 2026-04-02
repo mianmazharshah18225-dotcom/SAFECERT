@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
 
     // Fetch progress for each enrollment separately
     const enrollmentsWithProgress = await Promise.all(
-      enrollments.map(async (enrollment) => {
+      enrollments.map(async (enrollment: any) => {
         const progress = await prisma.progress.findMany({
           where: {
             studentId: enrollment.studentId,
