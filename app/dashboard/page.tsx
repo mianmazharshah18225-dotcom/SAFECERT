@@ -77,7 +77,7 @@ export default function DashboardPage() {
     activeEnrollments.length > 0
       ? Math.round(
           activeEnrollments.reduce(
-            (acc, e) => acc + (e.progress[0]?.completionPercentage || 0),
+            (acc: number, e) => acc + (e.progress[0]?.completionPercentage || 0),
             0
           ) / activeEnrollments.length
         )
