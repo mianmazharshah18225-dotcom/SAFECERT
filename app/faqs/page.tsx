@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
+import { COMPANY } from '@/lib/data'
 
 const FAQS = [
   {
@@ -97,7 +98,7 @@ export default function FAQsPage() {
           </h1>
           <p className="text-white/70 text-lg">
             Can't find what you're looking for? Call us on{' '}
-            <a href="tel:08001234567" className="text-gold-400 font-semibold hover:underline">0800 123 4567</a>
+            <a href={`tel:${COMPANY.phone}`} className="text-gold-400 font-semibold hover:underline">{COMPANY.phone}</a>
           </p>
         </div>
       </div>
@@ -152,13 +153,13 @@ export default function FAQsPage() {
           <p className="text-white/70 mb-6">Our team is available Monday–Saturday, 8am to 8pm</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:08001234567"
+              href={`tel:${COMPANY.phone}`}
               className="btn-gold px-8 py-3 rounded-xl font-bold inline-flex items-center justify-center gap-2"
             >
-              📞 Call 0800 123 4567
+              📞 Call {COMPANY.phone}
             </a>
             <a
-              href="mailto:info@safecertskills.co.uk"
+              href={`mailto:${COMPANY.email}`}
               className="bg-white/10 border border-white/20 px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition-colors"
             >
               ✉️ Email Us

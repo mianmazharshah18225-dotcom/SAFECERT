@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, ArrowRight, Mail, Calendar, Loader2 } from 'lucide-react'
+import { COMPANY } from '@/lib/data'
 
 function SuccessContent() {
   const searchParams = useSearchParams()
@@ -103,14 +104,20 @@ function SuccessContent() {
             <ul className="space-y-1 text-gray-700">
               <li>
                 <strong>Phone:</strong>{' '}
-                <a href="tel:08001234567" className="text-primary-600 hover:underline">
-                  0800 123 4567
+                <a href={`tel:${COMPANY.phone}`} className="text-primary-600 hover:underline">
+                  {COMPANY.phone}
                 </a>
               </li>
               <li>
-                <strong>Email:</strong>{' '}
-                <a href="mailto:info@safecertskills.co.uk" className="text-primary-600 hover:underline">
-                  info@safecertskills.co.uk
+                <strong>General Enquiries:</strong>{' '}
+                <a href={`mailto:${COMPANY.email}`} className="text-primary-600 hover:underline">
+                  {COMPANY.email}
+                </a>
+              </li>
+              <li>
+                <strong>Support:</strong>{' '}
+                <a href={`mailto:${COMPANY.supportEmail}`} className="text-primary-600 hover:underline">
+                  {COMPANY.supportEmail}
                 </a>
               </li>
             </ul>

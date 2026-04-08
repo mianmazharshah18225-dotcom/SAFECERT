@@ -64,6 +64,10 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-primary-400" />
                 {COMPANY.email}
               </a>
+              <a href={`mailto:${COMPANY.supportEmail}`} className="flex items-center gap-3 text-sm text-white/70 hover:text-gold-400 transition-colors">
+                <Mail className="w-4 h-4 text-primary-400" />
+                {COMPANY.supportEmail}
+              </a>
               <p className="flex items-center gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 text-primary-400" />
                 {COMPANY.address}

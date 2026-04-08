@@ -16,7 +16,8 @@ export default function ContactPage() {
 
   const contactDetails = [
     { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone}` },
-    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
+    { icon: <Mail className="w-5 h-5" />, label: 'General Enquiries', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
+    { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}` },
     { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#' },
     { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Sat: 8am–8pm', href: '#' },
   ]
