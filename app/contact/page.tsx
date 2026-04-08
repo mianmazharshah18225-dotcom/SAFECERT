@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, CheckCircle, Send } from 'lucide-react'
 import { COMPANY } from '@/lib/data'
+import ContactDetail from '@/components/ContactDetail'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -41,11 +42,11 @@ export default function ContactPage() {
   }
 
   const contactDetails = [
-    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone}` },
-    { icon: <Mail className="w-5 h-5" />, label: 'General Enquiries', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
-    { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}` },
-    { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#' },
-    { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Sat: 8am–8pm', href: '#' },
+    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone}`, isEmail: false },
+    { icon: <Mail className="w-5 h-5" />, label: 'General Enquiries', value: COMPANY.email, href: `mailto:${COMPANY.email}`, isEmail: true },
+    { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}`, isEmail: true },
+    { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#', isEmail: false },
+    { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Sat: 8am–8pm', href: '#', isEmail: false },
   ]
 
   return (
@@ -74,15 +75,14 @@ export default function ContactPage() {
               <h3 className="font-display font-bold text-gray-900 text-xl mb-6">Contact Details</h3>
               <div className="space-y-5">
                 {contactDetails.map((d, i) => (
-                  <a key={i} href={d.href} className="flex items-start gap-4 group">
-                    <div className="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 flex-shrink-0 group-hover:bg-primary-100 transition-colors">
-                      {d.icon}
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 mb-0.5 font-semibold uppercase tracking-wide">{d.label}</p>
-                      <p className="text-gray-700 font-medium group-hover:text-primary-600 transition-colors">{d.value}</p>
-                    </div>
-                  </a>
+                  <ContactDetail
+                    key={i}
+                    icon={d.icon}
+                    label={d.label}
+                    value={d.value}
+                    href={d.href}
+                    isEmail={d.isEmail}
+                  />
                 ))}
               </div>
             </div>
