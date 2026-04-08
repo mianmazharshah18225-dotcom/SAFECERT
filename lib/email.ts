@@ -21,7 +21,7 @@ export async function sendEmail({ to, subject, html, type }: SendEmailParams) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || 'SafeCert Skills <noreply@safecertskills.co.uk>',
+      from: process.env.FROM_EMAIL || 'SafeCert Skills <noreply@safecertskill.co.uk>',
       to: [to],
       subject,
       html,
@@ -95,7 +95,7 @@ export const emailTemplates = {
               <p>
                 <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/courses" class="button">Browse Courses</a>
               </p>
-              <p>If you have any questions, feel free to contact us at info@safecertskills.co.uk</p>
+              <p>If you have any questions, feel free to contact us at info@safecertskill.co.uk</p>
               <p>Best regards,<br>The SafeCert Skills Team</p>
             </div>
             <div class="footer">

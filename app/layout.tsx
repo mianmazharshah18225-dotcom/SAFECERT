@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: 'Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1.5 years.',
     type: 'website',
     locale: 'en_GB',
-    url: 'https://safecertskills.co.uk',
+    url: 'https://safecertskill.co.uk',
     siteName: 'SafeCert Skills Ltd',
   },
   twitter: {

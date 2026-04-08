@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description: 'Common questions about our First Aid, Food Hygiene & Health Safety courses in Luton. Duration, pricing, certification, career opportunities and more.',
   keywords: 'training FAQs, course questions, first aid FAQ, food hygiene questions, health safety info',
   alternates: {
-    canonical: 'https://safecertskills.co.uk/faqs',
+    canonical: 'https://safecertskill.co.uk/faqs',
   },
   openGraph: {
     title: 'FAQs | SafeCert Skills Ltd',
     description: 'Find answers to common questions about our training courses in Luton',
-    url: 'https://safecertskills.co.uk/faqs',
+    url: 'https://safecertskill.co.uk/faqs',
   },
 }
 

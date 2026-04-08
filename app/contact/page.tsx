@@ -5,13 +5,39 @@ import { COMPANY } from '@/lib/data'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     name: '', email: '', phone: '', course: '', message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.')
+      console.error('Contact form error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const contactDetails = [
@@ -174,12 +200,19 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="btn-gold w-full py-4 rounded-xl font-bold text-dark-900 flex items-center justify-center gap-2"
+                    disabled={loading}
+                    className="btn-gold w-full py-4 rounded-xl font-bold text-dark-900 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="w-5 h-5" />
-                    Send Message
+                    {loading ? 'Sending...' : 'Send Message'}
                   </button>
 
                   <p className="text-center text-xs text-gray-400">

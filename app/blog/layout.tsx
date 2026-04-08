@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description: 'Expert advice and guides on First Aid, Food Hygiene, and Health & Safety. Learn from professional trainers at SafeCert Skills Ltd in Luton.',
   keywords: 'first aid tips, food hygiene guide, health safety advice, training blog, CPR guide, HACCP principles',
   alternates: {
-    canonical: 'https://safecertskills.co.uk/blog',
+    canonical: 'https://safecertskill.co.uk/blog',
   },
   openGraph: {
     title: 'Training Blog | SafeCert Skills Ltd',
     description: 'Expert training insights from our professional trainers in Luton',
-    url: 'https://safecertskills.co.uk/blog',
+    url: 'https://safecertskill.co.uk/blog',
   },
 }
 

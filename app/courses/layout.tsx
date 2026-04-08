@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   description: 'Browse our professional training courses in Luton: First Aid (Level 3), Food & Hygiene (Level 2), Health & Safety (Level 3). Accredited certifications, 1.5 year programs. Book today!',
   keywords: 'training courses Luton, first aid course, food hygiene training, health safety certification, professional courses UK, accredited training',
   alternates: {
-    canonical: 'https://safecertskills.co.uk/courses',
+    canonical: 'https://safecertskill.co.uk/courses',
   },
   openGraph: {
     title: 'Training Courses in Luton | SafeCert Skills Ltd',
     description: 'Professional First Aid, Food Hygiene & Health Safety courses. Get certified in 1.5 years.',
-    url: 'https://safecertskills.co.uk/courses',
+    url: 'https://safecertskill.co.uk/courses',
   },
 }
 

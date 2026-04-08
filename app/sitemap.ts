@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { BLOG_POSTS } from '@/lib/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://safecertskills.co.uk'
+  const baseUrl = 'https://safecertskill.co.uk'
 
   // Blog post URLs
   const blogUrls = BLOG_POSTS.map(post => ({
