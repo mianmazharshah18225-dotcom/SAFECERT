@@ -23,6 +23,7 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
 
   // Prevent body scroll when modal is open
   useEffect(() => {
+    console.log('Modal isOpen state:', isOpen)
     if (isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
@@ -79,8 +80,18 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8">
+    <div
+      className="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center p-4 overflow-y-auto"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose()
+        }
+      }}
+    >
+      <div
+        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8"
+        onClick={(e) => e.stopPropagation()}
+      >
         {submitted ? (
           <div className="p-12 text-center">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">

@@ -79,8 +79,12 @@ export default function Testimonials() {
 
           {/* Add Review Button */}
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => {
+              console.log('Opening review modal...')
+              setIsModalOpen(true)
+            }}
             className="btn-gold px-6 py-3 rounded-xl font-bold inline-flex items-center gap-2"
+            type="button"
           >
             <Plus className="w-5 h-5" />
             Write a Review
