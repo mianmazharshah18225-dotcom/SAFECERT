@@ -207,19 +207,19 @@ export const FAQS_HOME = [
 
 export const TRAINERS = [
   {
-    name: 'Johnny Pirate',
+    name: 'Mr Muhammad Khalid',
     rating: 5,
     image: '/trainers/johnny.jpg',
     specialty: 'First Aid & Emergency Response',
   },
   {
-    name: 'Claudette Stewart',
+    name: 'Mr Muhammad Akhtar hussain',
     rating: 5,
     image: '/trainers/claudette.jpg',
     specialty: 'Food Safety & Hygiene',
   },
   {
-    name: 'Zowie Jennings',
+    name: 'Mr Imran Ahmad',
     rating: 5,
     image: '/trainers/zowie.jpg',
     specialty: 'Health & Safety Management',
@@ -234,6 +234,42 @@ export const TRAINERS = [
 
 export const BLOG_POSTS = [
   {
+    id: 'emergency-response-2026',
+    title: 'Emergency Response Techniques: What You Need to Know in 2026',
+    slug: 'emergency-response-2026',
+    category: 'First Aid',
+    image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=80',
+    excerpt: 'Stay updated with the latest emergency response protocols and techniques. Learn how modern first aid practices have evolved and what skills are essential in 2026.',
+    date: '2026-04-10',
+    readTime: '6 min read',
+    author: 'Johnny Pirate',
+    content: `Emergency response techniques continue to evolve with new medical research and technologies. In 2026, first aid responders need to be aware of updated protocols for cardiac emergencies, trauma care, and rapid assessment techniques.\n\nThe latest guidelines emphasize the importance of early intervention, proper use of AEDs, and effective communication with emergency services. Our comprehensive First Aid training course covers all these essential skills and more.\n\nWhether you're looking to become a certified first aid instructor or simply want to be prepared for emergencies, understanding modern emergency response is crucial for saving lives in critical situations.`,
+  },
+  {
+    id: 'food-safety-standards-2026',
+    title: 'Updated Food Safety Standards for UK Businesses in 2026',
+    slug: 'food-safety-standards-2026',
+    category: 'Food Hygiene',
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80',
+    excerpt: 'Discover the latest food safety regulations and hygiene standards that UK food businesses must comply with in 2026. Essential knowledge for restaurant owners and food handlers.',
+    date: '2026-04-10',
+    readTime: '7 min read',
+    author: 'Claudette Stewart',
+    content: `Food safety regulations in the UK continue to be updated to ensure the highest standards of public health protection. In 2026, food businesses must comply with enhanced hygiene protocols and documentation requirements.\n\nKey updates include stricter allergen labeling, improved temperature monitoring systems, and comprehensive staff training requirements. The Food Standards Agency has introduced new guidelines for handling and storing different food types.\n\nOur Level 2 Food & Hygiene course ensures you're fully compliant with all current regulations. From HACCP principles to practical food handling techniques, we cover everything you need to maintain the highest standards in your food business.`,
+  },
+  {
+    id: 'workplace-safety-regulations-2026',
+    title: 'New Workplace Safety Regulations: UK Compliance Guide 2026',
+    slug: 'workplace-safety-regulations-2026',
+    category: 'Health & Safety',
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80',
+    excerpt: 'Navigate the updated workplace safety regulations introduced in 2026. Learn what UK employers need to know about health and safety compliance.',
+    date: '2026-04-10',
+    readTime: '8 min read',
+    author: 'Zowie Jennings',
+    content: `The Health and Safety Executive (HSE) has introduced important updates to workplace safety regulations in 2026. These changes affect all UK businesses and require immediate attention from employers and safety officers.\n\nNew requirements include enhanced risk assessment procedures, updated reporting protocols for workplace incidents, and stricter guidelines for employee safety training. Mental health and wellbeing have also been incorporated into health and safety frameworks.\n\nOur Level 3 Health & Safety training provides comprehensive coverage of all current regulations. You'll learn practical risk assessment techniques, legal compliance requirements, and how to create a culture of safety in your workplace. Stay ahead of regulatory changes and protect your employees with proper training.`,
+  },
+  {
     id: 'first-aid-essentials',
     title: '10 Essential First Aid Skills Everyone Should Know',
     slug: 'first-aid-essentials',
@@ -242,7 +278,7 @@ export const BLOG_POSTS = [
     excerpt: 'Learn the fundamental first aid skills that could save a life. From CPR to treating burns, these are the essential techniques everyone should master.',
     date: '2025-03-15',
     readTime: '5 min read',
-    author: 'Johnny Pirate',
+    author: 'Mr Muhammad Khalid',
     content: `First aid knowledge is invaluable and can be the difference between life and death in emergency situations. Here are the 10 essential skills everyone should know...`,
   },
   {
@@ -254,7 +290,7 @@ export const BLOG_POSTS = [
     excerpt: 'Running a restaurant requires strict adherence to food safety standards. Discover the best practices to maintain hygiene and pass inspections.',
     date: '2025-03-10',
     readTime: '7 min read',
-    author: 'Claudette Stewart',
+    author: 'Mr Muhammad Akhtar hussain',
     content: `Food safety is paramount in the restaurant industry. Understanding and implementing proper hygiene practices protects your customers and your business...`,
   },
   {
@@ -266,7 +302,7 @@ export const BLOG_POSTS = [
     excerpt: 'Workplace safety should be a top priority for all businesses. Learn the most important safety measures to implement in your workplace.',
     date: '2025-03-05',
     readTime: '6 min read',
-    author: 'Zowie Jennings',
+    author: 'Mr Imran Ahmad',
     content: `Creating a safe workplace environment is not just a legal requirement—it's essential for employee wellbeing and productivity...`,
   },
   {
@@ -278,7 +314,7 @@ export const BLOG_POSTS = [
     excerpt: 'Cardiopulmonary resuscitation (CPR) can save lives. This comprehensive guide walks you through the proper CPR technique step by step.',
     date: '2025-02-28',
     readTime: '8 min read',
-    author: 'Johnny Pirate',
+    author: 'Mr Muhammad Khalid',
     content: `CPR is a life-saving technique that everyone should know. In this guide, we'll walk through the correct steps to perform CPR effectively...`,
   },
   {
@@ -290,7 +326,7 @@ export const BLOG_POSTS = [
     excerpt: 'HACCP is crucial for food safety management. Understand the seven principles and how to implement them in your food business.',
     date: '2025-02-20',
     readTime: '10 min read',
-    author: 'Claudette Stewart',
+    author: 'Mr Muhammad Akhtar hussain',
     content: `HACCP (Hazard Analysis and Critical Control Points) is a systematic approach to food safety. Let's explore each principle in detail...`,
   },
   {
@@ -302,7 +338,7 @@ export const BLOG_POSTS = [
     excerpt: 'Risk assessments are essential for workplace safety. Learn how to identify hazards, evaluate risks, and implement control measures.',
     date: '2025-02-15',
     readTime: '9 min read',
-    author: 'Zowie Jennings',
+    author: 'Mr Imran Ahmad',
     content: `A thorough risk assessment is the foundation of workplace safety. Here's how to conduct one effectively in your organization...`,
   },
 ]
