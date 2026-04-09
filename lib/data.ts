@@ -6,8 +6,11 @@ export const COMPANY = {
   whatsapp: '+44 7918 428115',
   email: 'info@safecertskill.co.uk',
   supportEmail: 'support@safecertskill.co.uk',
-  address: 'Luton, United Kingdom',
+  address: '68-72 Stuart Street, Luton, United Kingdom, LU1 2SW',
   location: 'Luton',
+  registeredAddress: '68-72 Stuart Street, Luton, United Kingdom, LU1 2SW',
+  companyNumber: '15893572',
+  incorporatedDate: '3 October 2024',
   duration: '1.5 Years',
   timing: '8:00 AM to 6:00 PM',
   social: {
@@ -24,8 +27,8 @@ export const COMPANY = {
   },
   stats: [
     { value: '100+', label: 'Students Trained' },
-    { value: 'Luton', label: 'Training Location' },
-    { value: '1.5 Years', label: 'Starting Date' },
+    { value: '1 Location', label: 'Luton' },
+    { value: 'Since 2024', label: 'Established' },
     { value: '98%', label: 'Pass Rate' },
   ],
 }

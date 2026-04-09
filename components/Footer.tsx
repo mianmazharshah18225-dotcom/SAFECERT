@@ -40,7 +40,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Professional training provider in Luton offering First Aid, Food & Hygiene, and Health & Safety courses.
-              Nationally accredited certifications trusted by over 300 students.
+              Nationally accredited certifications trusted by over 100 students.
             </p>
             {/* Trustpilot */}
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">
@@ -167,7 +167,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} SafeCert Skills Ltd. All rights reserved. Company No. 12345678 | Accredited Training Provider
+            © {new Date().getFullYear()} SafeCert Skills Ltd. All rights reserved. Company No. {COMPANY.companyNumber} | Accredited Training Provider
           </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Complaints'].map(link => (
