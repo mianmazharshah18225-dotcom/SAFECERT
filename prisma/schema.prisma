@@ -114,6 +114,22 @@ model EmailLog {
   @@map("email_logs")
 }
 
+// Review model - customer reviews/testimonials
+model Review {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  course      String?  // Which course they took
+  rating      Int      // 1-5 stars
+  text        String   @db.Text
+  isVerified  Boolean  @default(false) // Admin can verify reviews
+  isApproved  Boolean  @default(false) // Admin approval before showing
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("reviews")
+}
+
 // Enums
 enum Role {
   STUDENT
