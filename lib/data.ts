@@ -10,6 +10,13 @@ export const COMPANY = {
   location: 'Luton',
   duration: '1.5 Years',
   timing: '8:00 AM to 6:00 PM',
+  social: {
+    facebook: 'https://facebook.com/safecertskills',
+    instagram: 'https://instagram.com/safecertskills',
+    twitter: 'https://twitter.com/safecertskills',
+    linkedin: 'https://linkedin.com/company/safecertskills',
+    youtube: 'https://youtube.com/@safecertskills',
+  },
   trustpilot: {
     rating: 4.9,
     reviews: 12847,

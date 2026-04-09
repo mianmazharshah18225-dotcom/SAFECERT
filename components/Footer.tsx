@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Shield, Phone, MapPin, Star } from 'lucide-react'
+import { Shield, Phone, MapPin, Star, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react'
 import { COMPANY, COURSES, CATEGORIES } from '@/lib/data'
 import EmailLink from './EmailLink'
 
@@ -52,6 +52,58 @@ export default function Footer() {
                 </div>
                 <p className="text-sm font-semibold">Excellent — {COMPANY.trustpilot.reviews.toLocaleString()} reviews</p>
                 <p className="text-xs text-white/50">on Trustpilot</p>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="mt-6">
+              <h4 className="text-sm font-semibold text-white/80 mb-3">Follow Us</h4>
+              <div className="flex gap-3">
+                <a
+                  href={COMPANY.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-primary-600 border border-white/10 hover:border-primary-500 flex items-center justify-center transition-all group"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href={COMPANY.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 border border-white/10 hover:border-pink-500 flex items-center justify-center transition-all group"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href={COMPANY.social.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-500 border border-white/10 hover:border-blue-400 flex items-center justify-center transition-all group"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href={COMPANY.social.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-blue-700 border border-white/10 hover:border-blue-600 flex items-center justify-center transition-all group"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href={COMPANY.social.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/5 hover:bg-red-600 border border-white/10 hover:border-red-500 flex items-center justify-center transition-all group"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" />
+                </a>
               </div>
             </div>
 
