@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X, Star, CheckCircle } from 'lucide-react'
 
 interface AddReviewModalProps {
@@ -29,14 +30,10 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
 
   // Prevent body scroll when modal is open
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted || !isOpen) return
 
-    console.log('Modal isOpen state:', isOpen)
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
+    document.body.style.overflow = 'hidden'
+
     return () => {
       document.body.style.overflow = 'unset'
     }
@@ -88,19 +85,17 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
   // Don't render until mounted (prevents hydration mismatch)
   if (!mounted || !isOpen) return null
 
-  return (
+  const modalContent = (
     <div
       className="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center p-4 overflow-y-auto"
-      onClick={(e) => {
+      onMouseDown={(e) => {
         if (e.target === e.currentTarget) {
+          e.preventDefault()
           onClose()
         }
       }}
     >
-      <div
-        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-8">
         {submitted ? (
           <div className="p-12 text-center">
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -245,4 +240,6 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
       </div>
     </div>
   )
+
+  return createPortal(modalContent, document.body)
 }
