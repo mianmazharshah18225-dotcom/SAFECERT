@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Providers from '@/components/Providers'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = {
   title: 'SafeCert Skills Ltd – Professional Training in Luton | First Aid, Food Hygiene & Health Safety',
@@ -71,6 +72,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <WhatsAppButton />
         </Providers>
       </body>
     </html>
