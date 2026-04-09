@@ -6,7 +6,11 @@ import Providers from '@/components/Providers'
 import WhatsAppButton from '@/components/WhatsAppButton'
 
 export const metadata: Metadata = {
-  title: 'SafeCert Skills Ltd – Professional Training in Luton | First Aid, Food Hygiene & Health Safety',
+  metadataBase: new URL('https://safecertskill.co.uk'),
+  title: {
+    default: 'SafeCert Skills Ltd – Professional Training in Luton | First Aid, Food Hygiene & Health Safety',
+    template: '%s | SafeCert Skills Ltd'
+  },
   description: 'Professional training courses in Luton. Get certified in First Aid, Food & Hygiene, and Health & Safety. 1.5 year courses, 8am-6pm. 98% pass rate. Enrol today!',
   keywords: [
     'first aid training Luton',
@@ -25,10 +29,19 @@ export const metadata: Metadata = {
     'SafeCert Skills',
     'training courses Luton',
     'accredited training UK',
+    'SIA approved training',
+    'BTEC accredited courses',
+    'Luton training provider',
+    'career training UK',
   ].join(', '),
-  authors: [{ name: 'SafeCert Skills Ltd' }],
+  authors: [{ name: 'SafeCert Skills Ltd', url: 'https://safecertskill.co.uk' }],
   creator: 'SafeCert Skills Ltd',
   publisher: 'SafeCert Skills Ltd',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     title: 'SafeCert Skills Ltd – Professional Training in Luton',
     description: 'Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1.5 years.',
@@ -36,11 +49,20 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://safecertskill.co.uk',
     siteName: 'SafeCert Skills Ltd',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SafeCert Skills Ltd - Professional Training Courses in Luton',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SafeCert Skills Ltd – Professional Training in Luton',
     description: 'First Aid, Food Hygiene & Health Safety training courses in Luton',
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -54,8 +76,12 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'your-google-verification-code', // Replace with your actual verification code from Google Search Console
   },
+  alternates: {
+    canonical: 'https://safecertskill.co.uk',
+  },
+  category: 'education',
 }
 
 export default function RootLayout({
