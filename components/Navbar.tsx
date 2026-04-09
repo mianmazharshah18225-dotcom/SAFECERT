@@ -49,7 +49,7 @@ export default function Navbar() {
               <a href={`tel:${COMPANY.phone}`} className="hover:text-gold-400 transition-colors">{COMPANY.phone}</a>
             </span>
             <span className="text-white/60">|</span>
-            <span className="text-white/70">Mon–Sat: 8am–8pm</span>
+            <span className="text-white/70">Mon–Sat: 8am–6pm</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5">
