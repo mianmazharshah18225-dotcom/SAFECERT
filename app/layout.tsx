@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Replace with your actual verification code from Google Search Console
+    google: '3283144d5654ff69', // Google Search Console verification
   },
   alternates: {
     canonical: 'https://safecertskill.co.uk',
