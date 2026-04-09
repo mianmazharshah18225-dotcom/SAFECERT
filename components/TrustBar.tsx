@@ -1,14 +1,14 @@
 'use client'
 import Link from 'next/link'
-import { Shield, Award, Users, Zap } from 'lucide-react'
+import { Heart, Utensils, Shield, Award } from 'lucide-react'
 import { COMPANY } from '@/lib/data'
 
 export default function TrustBar() {
   const items = [
-    { icon: <Shield className="w-5 h-5" />, label: 'SIA Approved Provider' },
-    { icon: <Award className="w-5 h-5" />, label: 'BTEC Accredited' },
-    { icon: <Users className="w-5 h-5" />, label: '100+ Graduates' },
-    { icon: <Zap className="w-5 h-5" />, label: 'Fast Track Available' },
+    { icon: <Heart className="w-5 h-5" />, label: 'First Aid Certified' },
+    { icon: <Utensils className="w-5 h-5" />, label: 'Food Hygiene Accredited' },
+    { icon: <Shield className="w-5 h-5" />, label: 'Health & Safety Approved' },
+    { icon: <Award className="w-5 h-5" />, label: '98% Pass Rate' },
   ]
 
   return (

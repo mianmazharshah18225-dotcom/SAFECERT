@@ -11,11 +11,24 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [profileOpen, setProfileOpen] = useState(false)
+  const [reviewCount, setReviewCount] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    // Fetch review count
+    fetch('/api/reviews')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setReviewCount(data.reviews.length)
+        }
+      })
+      .catch(err => console.error('Error fetching reviews:', err))
   }, [])
 
   // Close profile dropdown when clicking outside
@@ -51,16 +64,18 @@ export default function Navbar() {
             <span className="text-white/60">|</span>
             <span className="text-white/70">Mon–Sat: 8am–6pm</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex gap-0.5">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} className="w-3.5 h-3.5 fill-green-400 text-green-400" />
-              ))}
+          {reviewCount > 0 && (
+            <div className="flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-green-400 text-green-400" />
+                ))}
+              </div>
+              <span className="text-white/80 font-medium">Excellent</span>
+              <span className="text-white/50">·</span>
+              <span className="text-white/70">{reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}</span>
             </div>
-            <span className="text-white/80 font-medium">Excellent</span>
-            <span className="text-white/50">·</span>
-            <span className="text-white/70">{COMPANY.trustpilot.reviews.toLocaleString()} reviews on Trustpilot</span>
-          </div>
+          )}
         </div>
       </div>
 

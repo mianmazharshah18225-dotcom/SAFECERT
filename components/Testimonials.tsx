@@ -18,6 +18,7 @@ interface Review {
 
 export default function Testimonials() {
   const [reviews, setReviews] = useState<Review[]>([])
+  const [reviewCount, setReviewCount] = useState(0)
   const [loading, setLoading] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -32,6 +33,7 @@ export default function Testimonials() {
 
       if (data.success) {
         setReviews(data.reviews)
+        setReviewCount(data.reviews.length)
       }
     } catch (error) {
       console.error('Error fetching reviews:', error)
@@ -62,17 +64,18 @@ export default function Testimonials() {
           <h2 className="font-display text-4xl font-extrabold text-gray-900 mb-4">
             What Our Students Say
           </h2>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="flex gap-1">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} className="w-5 h-5 fill-green-500 text-green-500" />
-              ))}
+          {reviewCount > 0 && (
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="flex gap-1">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} className="w-5 h-5 fill-green-500 text-green-500" />
+                ))}
+              </div>
+              <span className="font-bold text-gray-900">Excellent</span>
+              <span className="text-gray-400">·</span>
+              <span className="text-gray-500">{reviewCount} {reviewCount === 1 ? 'review' : 'reviews'}</span>
             </div>
-            <span className="font-bold text-gray-900">Excellent</span>
-            <span className="text-gray-400">·</span>
-            <span className="text-gray-500">{COMPANY.trustpilot.reviews.toLocaleString()} reviews on</span>
-            <span className="font-bold text-green-600">Trustpilot</span>
-          </div>
+          )}
 
           {/* Add Review Button */}
           <button
