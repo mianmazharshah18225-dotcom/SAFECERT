@@ -88,7 +88,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-4">
             {[
               { year: 'Oct 2024', event: 'SafeCert Skills Ltd founded in Luton' },
-              { year: 'Nov 2024', event: 'First students enrolled' },
+              { year: 'Nov 2024', event: 'tudents enrolled' },
               { year: 'Dec 2024', event: 'Reached 50+ students trained' },
               { year: '2025', event: '100+ graduates & growing' },
             ].map((milestone, i) => (
