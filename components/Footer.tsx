@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-display text-2xl font-bold mb-1">Ready to Start Your Career?</h3>
-            <p className="text-white/80">Join 5,000+ students who trained with SafeCert Skills Ltd</p>
+            <p className="text-white/80">Join 300+ students who trained with SafeCert Skills Ltd</p>
           </div>
           <div className="flex gap-4">
             <Link href="/courses" className="px-6 py-3 bg-white text-primary-800 font-bold rounded-xl hover:bg-gray-100 transition-colors">
@@ -40,7 +40,7 @@ export default function Footer() {
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Professional training provider in Luton offering First Aid, Food & Hygiene, and Health & Safety courses.
-              Nationally accredited certifications trusted by over 5,000 students.
+              Nationally accredited certifications trusted by over 300 students.
             </p>
             {/* Trustpilot */}
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">

@@ -3,7 +3,7 @@ import { CATEGORIES } from '@/lib/data'
 
 export default function CategoryCards() {
   const categoryDescriptions: Record<string, string> = {
-    firstaid: '1 DAy Program | 8am-6pm Daily',
+    firstaid: '1 Day Program | 8am-6pm Daily',
     foodhygiene: '1 Day Program | 8am-6pm Daily',
     healthsafety: '1 Day Program | 8am-6pm Daily',
   }

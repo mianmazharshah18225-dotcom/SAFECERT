@@ -89,8 +89,8 @@ export default function AboutPage() {
             {[
               { year: '2009', event: 'SafeCert founded in London' },
               { year: '2013', event: 'Expanded to 20 UK locations' },
-              { year: '2018', event: 'Reached 25,000 graduates' },
-              { year: '2024', event: '120+ locations & 50,000+ graduates' },
+              { year: '2018', event: 'Reached 300+ graduates' },
+              { year: '2024', event: '1 locations & 300+ graduates' },
             ].map((milestone, i) => (
               <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="font-display text-2xl font-extrabold text-primary-600 mb-1">{milestone.year}</div>
