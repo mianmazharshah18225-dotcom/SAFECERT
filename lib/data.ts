@@ -23,7 +23,7 @@ export const COMPANY = {
     label: 'Excellent',
   },
   stats: [
-    { value: '300+', label: 'Students Trained' },
+    { value: '100+', label: 'Students Trained' },
     { value: 'Luton', label: 'Training Location' },
     { value: '1.5 Years', label: 'Starting Date' },
     { value: '98%', label: 'Pass Rate' },

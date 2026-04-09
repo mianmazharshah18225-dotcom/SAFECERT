@@ -17,7 +17,7 @@ export default function CTASection() {
           Ready to Launch Your Career?
         </h2>
         <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join 300+ students who have transformed their careers with SafeCert Skills Ltd. 
+          Join 100+ students who have transformed their careers with SafeCert Skills Ltd. 
           Courses starting every week across Luton.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

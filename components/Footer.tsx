@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-display text-2xl font-bold mb-1">Ready to Start Your Career?</h3>
-            <p className="text-white/80">Join 300+ students who trained with SafeCert Skills Ltd</p>
+            <p className="text-white/80">Join 100+ students who trained with SafeCert Skills Ltd</p>
           </div>
           <div className="flex gap-4">
             <Link href="/courses" className="px-6 py-3 bg-white text-primary-800 font-bold rounded-xl hover:bg-gray-100 transition-colors">

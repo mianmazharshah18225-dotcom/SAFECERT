@@ -66,7 +66,7 @@ export default function AboutPage() {
               Our Story
             </span>
             <h2 className="font-display text-4xl font-bold text-gray-900 mb-6">
-              15+ Years of Transforming Careers
+              1+ Years of Transforming Careers
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
@@ -88,9 +88,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-4">
             {[
               { year: '2009', event: 'SafeCert founded in London' },
-              { year: '2013', event: 'Expanded to 20 UK locations' },
-              { year: '2018', event: 'Reached 300+ graduates' },
-              { year: '2024', event: '1 locations & 300+ graduates' },
+              { year: '2013', event: 'Expanded soon' },
+              { year: '2018', event: 'Reached 100+ graduates' },
+              { year: '2024', event: '1 locations & 100+ graduates' },
             ].map((milestone, i) => (
               <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="font-display text-2xl font-extrabold text-primary-600 mb-1">{milestone.year}</div>

@@ -7,7 +7,7 @@ export default function TrustBar() {
   const items = [
     { icon: <Shield className="w-5 h-5" />, label: 'SIA Approved Provider' },
     { icon: <Award className="w-5 h-5" />, label: 'BTEC Accredited' },
-    { icon: <Users className="w-5 h-5" />, label: '300+ Graduates' },
+    { icon: <Users className="w-5 h-5" />, label: '100+ Graduates' },
     { icon: <Zap className="w-5 h-5" />, label: 'Fast Track Available' },
   ]
 

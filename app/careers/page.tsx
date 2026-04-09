@@ -22,7 +22,7 @@ export default function CareersPage() {
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             From First Aid Instructor to Safety Manager — discover the career pathways available
-            after completing your 1.5 year training with SafeCert Skills Ltd in Luton.
+            after completing your 1 day training with SafeCert Skills Ltd in Luton.
           </p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function CareersPage() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6 mb-16">
           {[
-            { icon: <Users className="w-6 h-6" />, value: '5,000+', label: 'Graduates Placed' },
+            { icon: <Users className="w-6 h-6" />, value: '100+', label: 'Graduates Placed' },
             { icon: <TrendingUp className="w-6 h-6" />, value: '95%', label: 'Employment Rate' },
             { icon: <Star className="w-6 h-6" />, value: '£35k+', label: 'Avg. Senior Salary' },
           ].map((s, i) => (
