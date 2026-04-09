@@ -14,6 +14,7 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
   const [error, setError] = useState('')
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
+  const [mounted, setMounted] = useState(false)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -21,8 +22,15 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
     text: '',
   })
 
+  // Ensure component is mounted (client-side only)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   // Prevent body scroll when modal is open
   useEffect(() => {
+    if (!mounted) return
+
     console.log('Modal isOpen state:', isOpen)
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -32,7 +40,7 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
     return () => {
       document.body.style.overflow = 'unset'
     }
-  }, [isOpen])
+  }, [isOpen, mounted])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -77,7 +85,8 @@ export default function AddReviewModal({ isOpen, onClose }: AddReviewModalProps)
     }
   }
 
-  if (!isOpen) return null
+  // Don't render until mounted (prevents hydration mismatch)
+  if (!mounted || !isOpen) return null
 
   return (
     <div
