@@ -66,31 +66,31 @@ export default function AboutPage() {
               Our Story
             </span>
             <h2 className="font-display text-4xl font-bold text-gray-900 mb-6">
-              1+ Years of Transforming Careers
+              Transforming Careers Since 2024
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                SafeCert Skills Ltd was founded with a single mission: to provide accessible, 
+                SafeCert Skills Ltd was founded in October 2024 with a single mission: to provide accessible,
                 high-quality professional training that genuinely changes people's lives.
               </p>
               <p>
-                Starting with a single security training centre in London, we've grown to become 
-                the UK's most trusted training provider, with over 120 locations across England, 
-                Scotland, Wales, and Northern Ireland.
+                Based in Luton at 68-72 Stuart Street, we are committed to becoming one of the UK's
+                most trusted training providers. Our modern training centre offers professional courses
+                in First Aid, Food & Hygiene, and Health & Safety.
               </p>
               <p>
-                Today, over 50,000 graduates work in roles they love — as door supervisors, 
-                CCTV operators, close protection officers, bar managers, and construction workers — 
-                all thanks to the training and support they received at SafeCert.
+                Since our incorporation, we've already trained over 100 students who are now working
+                in roles they love — as first aid instructors, food safety officers, health & safety
+                advisors, and more — all thanks to the quality training and support they received at SafeCert.
               </p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { year: '2009', event: 'SafeCert founded in London' },
-              { year: '2013', event: 'Expanded soon' },
-              { year: '2018', event: 'Reached 100+ graduates' },
-              { year: '2024', event: '1 locations & 100+ graduates' },
+              { year: 'Oct 2024', event: 'SafeCert Skills Ltd founded in Luton' },
+              { year: 'Nov 2024', event: 'First students enrolled' },
+              { year: 'Dec 2024', event: 'Reached 50+ students trained' },
+              { year: '2025', event: '100+ graduates & growing' },
             ].map((milestone, i) => (
               <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
                 <div className="font-display text-2xl font-extrabold text-primary-600 mb-1">{milestone.year}</div>
@@ -166,7 +166,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 hero-pattern opacity-50" />
           <div className="relative">
             <h2 className="font-display text-4xl font-extrabold text-white mb-4">
-              Ready to Join Our 50,000+ Graduates?
+              Ready to Join Our 100+ Graduates?
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
               Start your training journey today and transform your career with SafeCert Skills Ltd.

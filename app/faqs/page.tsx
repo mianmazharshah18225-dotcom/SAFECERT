@@ -51,7 +51,7 @@ const FAQS = [
     items: [
       {
         q: 'How do I book a course?',
-        a: 'You can book online through our website, call us on 0800 123 4567, or visit our training centre in Luton. We recommend booking early as places fill up fast.',
+        a: 'You can book online through our website, call us on +44 7918 428115, or visit our training centre in Luton. We recommend booking early as places fill up fast.',
       },
       {
         q: 'Do you offer payment plans?',
