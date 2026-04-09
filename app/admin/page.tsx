@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { Loader2, Users, BookOpen, DollarSign, TrendingUp, Trash2, CheckCircle, XCircle, Mail, Calendar } from 'lucide-react'
+import Link from 'next/link'
+import { Loader2, Users, BookOpen, DollarSign, TrendingUp, Trash2, CheckCircle, XCircle, Mail, Calendar, Star } from 'lucide-react'
 
 interface Stats {
   totalStudents: number
@@ -184,6 +185,33 @@ export default function AdminDashboard() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="mb-8">
+          <Link
+            href="/admin/reviews"
+            className="block bg-gradient-to-r from-gold-400 to-gold-600 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all group"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Star className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-white font-display text-xl font-bold mb-1">
+                    Review Management
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    Approve, verify, or delete customer reviews with one click
+                  </p>
+                </div>
+              </div>
+              <div className="text-white font-semibold group-hover:translate-x-2 transition-transform">
+                Manage Reviews →
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Tabs */}
