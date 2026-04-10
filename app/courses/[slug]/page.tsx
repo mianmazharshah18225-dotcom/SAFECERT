@@ -3,12 +3,15 @@ import Link from 'next/link'
 import { Clock, Tag, CheckCircle, MapPin, Phone, Star, ArrowRight, Shield } from 'lucide-react'
 import { COURSES, COMPANY } from '@/lib/data'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   return COURSES.map(c => ({ slug: c.id }))
 }
 
-export default function CourseDetailPage({ params }: { params: { slug: string } }) {
-  const course = COURSES.find(c => c.id === params.slug)
+export default async function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const course = COURSES.find(c => c.id === slug)
   if (!course) notFound()
 
   const related = COURSES.filter(c => c.category === course.category && c.id !== course.id).slice(0, 3)
