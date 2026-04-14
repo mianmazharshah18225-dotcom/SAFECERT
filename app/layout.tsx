@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'SafeCert Skills Ltd – Professional Training in Luton | First Aid, Food Hygiene & Health Safety',
     template: '%s | SafeCert Skills Ltd'
   },
-  description: 'Professional training courses in Luton. Get certified in First Aid, Food & Hygiene, and Health & Safety. 1.5 year courses, 8am-6pm. 98% pass rate. Enrol today!',
+  description: 'Professional training courses in Luton. Get certified in First Aid, Food & Hygiene, and Health & Safety. 1 Day courses, 8am-6pm. 98% pass rate. Enrol today!',
   keywords: [
     'first aid training Luton',
     'food hygiene course Luton',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'SafeCert Skills Ltd – Professional Training in Luton',
-    description: 'Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1.5 years.',
+    description: 'Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1 Days.',
     type: 'website',
     locale: 'en_GB',
     url: 'https://safecertskill.co.uk',

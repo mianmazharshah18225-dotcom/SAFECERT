@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Training Courses in Luton | First Aid, Food Hygiene & Health Safety | SafeCert',
-  description: 'Browse our professional training courses in Luton: First Aid (Level 3), Food & Hygiene (Level 2), Health & Safety (Level 3). Accredited certifications, 1.5 year programs. Book today!',
+  description: 'Browse our professional training courses in Luton: First Aid (Level 3), Food & Hygiene (Level 2), Health & Safety (Level 3). Accredited certifications, 1 Day programs. Book today!',
   keywords: 'training courses Luton, first aid course, food hygiene training, health safety certification, professional courses UK, accredited training',
   alternates: {
     canonical: 'https://safecertskill.co.uk/courses',
   },
   openGraph: {
     title: 'Training Courses in Luton | SafeCert Skills Ltd',
-    description: 'Professional First Aid, Food Hygiene & Health Safety courses. Get certified in 1.5 years.',
+    description: 'Professional First Aid, Food Hygiene & Health Safety courses. Get certified in 1 Days.',
     url: 'https://safecertskill.co.uk/courses',
   },
 }

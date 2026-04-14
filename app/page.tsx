@@ -13,13 +13,13 @@ import FAQSection from '@/components/FAQSection'
 
 export const metadata: Metadata = {
   title: 'SafeCert Skills Ltd | First Aid, Food Hygiene & Health Safety Training in Luton',
-  description: 'Professional training courses in Luton. First Aid (Level 3), Food & Hygiene (Level 2), Health & Safety (Level 3). 1.5 year programs, 8am-6pm daily. 98% pass rate. Book now!',
+  description: 'Professional training courses in Luton. First Aid (Level 3), Food & Hygiene (Level 2), Health & Safety (Level 3). 1 Day programs, 8am-6pm daily. 98% pass rate. Book now!',
   alternates: {
     canonical: 'https://safecertskill.co.uk',
   },
   openGraph: {
     title: 'SafeCert Skills Ltd | Professional Training Courses in Luton',
-    description: 'Get certified in First Aid, Food Hygiene & Health Safety. 1.5 year courses in Luton with 98% pass rate.',
+    description: 'Get certified in First Aid, Food Hygiene & Health Safety. 1 Day courses in Luton with 98% pass rate.',
     url: 'https://safecertskill.co.uk',
     images: [
       {

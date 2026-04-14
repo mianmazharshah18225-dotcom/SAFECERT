@@ -5,7 +5,7 @@ Professional Next.js website for SafeCert Skills Ltd offering First Aid, Food & 
 ## ✨ Features
 
 - **3 Professional Courses**: First Aid, Food & Hygiene, Health & Safety
-- **1.5 Year Programs**: 8am-6pm daily in Luton
+- **1 Day Programs**: 8am-6pm daily in Luton
 - **Stripe Payments**: Secure online enrollment (Test Mode ready)
 - **Blog System**: 6 articles with search and filtering
 - **Career Pathways**: Job opportunities showcase
@@ -16,6 +16,7 @@ Professional Next.js website for SafeCert Skills Ltd offering First Aid, Food & 
 ## 🚀 Quick Deploy to Vercel (10 Minutes)
 
 ### 1. Push to GitHub
+
 ```bash
 cd /Users/laptop/Desktop/safecert
 git init
@@ -26,6 +27,7 @@ git push -u origin main
 ```
 
 ### 2. Deploy on Vercel
+
 1. Go to https://vercel.com (sign up with GitHub)
 2. Click "Add New" → "Project"
 3. Import your `safecert-skills` repository
@@ -88,6 +90,7 @@ safecert/
 **Everything is in ONE file:** `lib/data.ts`
 
 Update:
+
 - Company info (phone, email, address)
 - Courses (title, price, description)
 - Blog posts
@@ -137,6 +140,7 @@ Then push to GitHub → Auto-deploys to Vercel!
 ### Update Domain
 
 After deployment, find & replace in all files:
+
 - Find: `https://safecertskills.co.uk`
 - Replace: `https://your-domain.com`
 
@@ -145,6 +149,7 @@ After deployment, find & replace in all files:
 See `.env.example` for available variables.
 
 **Required for Payments:**
+
 ```bash
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here
 STRIPE_SECRET_KEY=sk_test_your_key_here

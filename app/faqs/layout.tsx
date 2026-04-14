@@ -41,7 +41,7 @@ export default function FAQsLayout({
                 name: 'How long does training take?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'All our courses run for 1.5 years with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
+                  text: 'All our courses run for 1 Days with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
                 },
               },
               {

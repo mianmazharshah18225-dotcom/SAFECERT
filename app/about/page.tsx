@@ -4,7 +4,7 @@ import { COMPANY } from '@/lib/data'
 
 export default function AboutPage() {
   const values = [
-    { icon: '🎯', title: 'Excellence', desc: 'We maintain a 98% pass rate through expert instruction and comprehensive 1.5 year programs.' },
+    { icon: '🎯', title: 'Excellence', desc: 'We maintain a 98% pass rate through expert instruction and comprehensive 1 Day programs.' },
     { icon: '🤝', title: 'Support', desc: 'From enrolment to employment — our team supports every student every step of the way.' },
     { icon: '🏆', title: 'Accreditation', desc: 'All courses are nationally accredited and recognised by employers across the UK.' },
     { icon: '💡', title: 'Innovation', desc: 'We continually update our courses to reflect the latest industry standards and best practices.' },
@@ -38,7 +38,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
               SafeCert Skills Ltd provides professional training in First Aid, Food & Hygiene, and Health & Safety.
-              Our comprehensive 1.5 year programs in Luton combine expert instruction with genuine care for our students.
+              Our comprehensive 1 Day programs in Luton combine expert instruction with genuine care for our students.
             </p>
           </div>
         </div>

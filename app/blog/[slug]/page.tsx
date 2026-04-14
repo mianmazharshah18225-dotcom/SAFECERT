@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">Want to Learn More?</h3>
               <p className="text-gray-600 mb-6">
                 This is just a preview. Our full courses provide comprehensive training with hands-on experience
-                and expert instruction over 1.5 years at our Luton training centre.
+                and expert instruction over 1 Days at our Luton training centre.
               </p>
               <Link
                 href="/courses"
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="text-4xl mb-4">🎓</div>
           <h3 className="font-display text-2xl font-bold mb-3">Ready to Start Your Training?</h3>
           <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-            Join our 1.5 year professional training programs in Luton. Expert instruction, 8am-6pm daily.
+            Join our 1 Day professional training programs in Luton. Expert instruction, 8am-6pm daily.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/courses" className="btn-gold px-8 py-3 rounded-xl font-bold">
