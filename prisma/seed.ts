@@ -45,7 +45,7 @@ async function main() {
       description: 'Comprehensive first aid training course. Learn essential life-saving skills including CPR, emergency response, and patient care. Perfect for those seeking a career in healthcare or emergency services.',
       price: 1200,
       originalPrice: 1500,
-      duration: '1 Day
+      duration: '1 Day',
       level: 'Level 3',
       icon: '🏥',
       image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=800&q=80',
