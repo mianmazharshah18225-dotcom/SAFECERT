@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <h3 className="font-display text-2xl font-bold text-gray-900 mb-4">Want to Learn More?</h3>
               <p className="text-gray-600 mb-6">
                 This is just a preview. Our full courses provide comprehensive training with hands-on experience
-                and expert instruction over 1 Days at our Luton training centre.
+                and expert instruction over 1 Day at our Luton training centre.
               </p>
               <Link
                 href="/courses"

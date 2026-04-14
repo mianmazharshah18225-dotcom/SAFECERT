@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Training Courses in Luton | SafeCert Skills Ltd',
-    description: 'Professional First Aid, Food Hygiene & Health Safety courses. Get certified in 1 Days.',
+    description: 'Professional First Aid, Food Hygiene & Health Safety courses. Get certified in 1 Day.',
     url: 'https://safecertskill.co.uk/courses',
   },
 }

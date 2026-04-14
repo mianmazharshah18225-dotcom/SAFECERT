@@ -11,7 +11,7 @@ export const COMPANY = {
     registeredAddress: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
     companyNumber: "15893572",
     incorporatedDate: "3 October 2024",
-    duration: "1 Days",
+    duration: "1 Day",
     timing: "8:00 AM to 6:00 PM",
     social: {
         facebook: "https://facebook.com/safecertskills",
@@ -184,7 +184,7 @@ export const FAQS_HOME = [
     },
     {
         q: "How long does training take?",
-        a: "All our courses run for 1 Days with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.",
+        a: "All our courses run for 1 Day with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.",
     },
     {
         q: "Are your courses accredited?",

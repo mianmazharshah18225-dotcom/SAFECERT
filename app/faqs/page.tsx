@@ -13,7 +13,7 @@ const FAQS = [
       },
       {
         q: 'How long does training take?',
-        a: 'All our courses run for 1 Days with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
+        a: 'All our courses run for 1 Day with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
       },
       {
         q: 'Are your courses accredited?',
@@ -76,7 +76,7 @@ const FAQS = [
       },
       {
         q: 'What are the class timings?',
-        a: 'Classes run from 8:00 AM to 6:00 PM. The course duration is 1 Days with a structured schedule to ensure comprehensive learning.',
+        a: 'Classes run from 8:00 AM to 6:00 PM. The course duration is 1 Day with a structured schedule to ensure comprehensive learning.',
       },
     ],
   },
