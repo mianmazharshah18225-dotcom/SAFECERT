@@ -62,7 +62,7 @@
 When someone shares your site on Facebook/LinkedIn, they'll see:
 
 **Title**: SafeCert Skills Ltd – Professional Training in Luton
-**Description**: Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1.5 years.
+**Description**: Professional First Aid, Food Hygiene & Health Safety training courses in Luton. Get certified in 1 Day.
 **Image**: Your OG image (you need to add this!)
 
 ---
