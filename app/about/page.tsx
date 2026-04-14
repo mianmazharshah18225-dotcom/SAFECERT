@@ -11,9 +11,9 @@ export default function AboutPage() {
   ]
 
   const team = [
-    { name: 'James Harrison', role: 'Chief Executive Officer', emoji: '👨‍💼' },
+    { name: 'Mian Jawad Shah', role: 'Business Support Manager', emoji: '👨‍💼' },
     { name: 'Sarah Mitchell', role: 'Head of Training', emoji: '👩‍🏫' },
-    { name: 'David Osei', role: 'Senior Instructor', emoji: '👨‍🏫' },
+    { name: 'Mr Zakir Khan', role: 'Centre Manager', emoji: '👨‍🏫' },
     { name: 'Priya Patel', role: 'Student Services Manager', emoji: '👩‍💼' },
   ]
 
