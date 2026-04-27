@@ -44,7 +44,7 @@ export default function CoursesLayout({
                 hasCourseInstance: {
                   '@type': 'CourseInstance',
                   courseMode: 'onsite',
-                  duration: 'P18M',
+                  duration: 'P1D',
                   courseSchedule: {
                     '@type': 'Schedule',
                     repeatFrequency: 'Daily',
@@ -75,7 +75,7 @@ export default function CoursesLayout({
                 hasCourseInstance: {
                   '@type': 'CourseInstance',
                   courseMode: 'onsite',
-                  duration: 'P18M',
+                  duration: 'P1D',
                   courseSchedule: {
                     '@type': 'Schedule',
                     repeatFrequency: 'Daily',
@@ -106,7 +106,7 @@ export default function CoursesLayout({
                 hasCourseInstance: {
                   '@type': 'CourseInstance',
                   courseMode: 'onsite',
-                  duration: 'P18M',
+                  duration: 'P1D',
                   courseSchedule: {
                     '@type': 'Schedule',
                     repeatFrequency: 'Daily',

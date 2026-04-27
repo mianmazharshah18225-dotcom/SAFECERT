@@ -22,7 +22,7 @@ export const COMPANY = {
     },
     trustpilot: {
         rating: 4.9,
-        reviews: 12847,
+        reviews: 2,
         label: "Excellent",
     },
     stats: [
