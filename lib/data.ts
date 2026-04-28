@@ -107,7 +107,7 @@ export const TESTIMONIALS = [
         verified: true,
     },
     {
-        name: "Mr Muhammad Akhtar Hussain",
+        name: "Mr Akhtar Hussain",
         rating: 5,
         date: "1 month ago",
         text: "Excellent course, very well structured. The Food & Hygiene training was thorough and the staff were always available to answer questions. Highly recommend SafeCert!",
@@ -212,7 +212,7 @@ export const TRAINERS = [
         specialty: "First Aid & Emergency Response",
     },
     {
-        name: "Mr Muhammad Akhtar hussain",
+        name: "Mr Akhtar Hussain",
         rating: 5,
         image: "/trainers/claudette.jpg",
         specialty: "Food Safety & Hygiene",
@@ -289,7 +289,7 @@ export const BLOG_POSTS = [
         excerpt: "Running a restaurant requires strict adherence to food safety standards. Discover the best practices to maintain hygiene and pass inspections.",
         date: "2025-03-10",
         readTime: "7 min read",
-        author: "Mr Muhammad Akhtar hussain",
+        author: "Mr Akhtar Hussain",
         content: `Food safety is paramount in the restaurant industry. Understanding and implementing proper hygiene practices protects your customers and your business...`,
     },
     {
@@ -325,7 +325,7 @@ export const BLOG_POSTS = [
         excerpt: "HACCP is crucial for food safety management. Understand the seven principles and how to implement them in your food business.",
         date: "2025-02-20",
         readTime: "10 min read",
-        author: "Mr Muhammad Akhtar hussain",
+        author: "Mr Akhtar Hussain",
         content: `HACCP (Hazard Analysis and Critical Control Points) is a systematic approach to food safety. Let's explore each principle in detail...`,
     },
     {
