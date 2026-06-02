@@ -78,4 +78,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
+    <!-- Email addresses are typically not included in XML sitemaps; keeping sitemap URLs only. -->
 </urlset>
