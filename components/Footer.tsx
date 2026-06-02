@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4">
               <div>
                 <div className="flex gap-0.5 mb-1">
-                  {[1,2,3,4,5].map(i => (
+                  {[1, 2, 3, 4, 5].map(i => (
                     <Star key={i} className="w-4 h-4 fill-green-400 text-green-400" />
                   ))}
                 </div>
@@ -115,6 +115,7 @@ export default function Footer() {
               </a>
               <EmailLink email={COMPANY.email} />
               <EmailLink email={COMPANY.supportEmail} />
+              <EmailLink email={COMPANY.zakirEmail} />
               <p className="flex items-center gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 text-primary-400" />
                 {COMPANY.address}

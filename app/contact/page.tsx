@@ -45,6 +45,7 @@ export default function ContactPage() {
     { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone}`, isEmail: false },
     { icon: <Mail className="w-5 h-5" />, label: 'General Enquiries', value: COMPANY.email, href: `mailto:${COMPANY.email}`, isEmail: true },
     { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}`, isEmail: true },
+    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: COMPANY.zakirEmail, href: `mailto:${COMPANY.zakirEmail}`, isEmail: true },
     { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#', isEmail: false },
     { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Sat: 8am–6pm', href: '#', isEmail: false },
   ]

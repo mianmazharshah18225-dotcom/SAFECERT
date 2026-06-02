@@ -6,6 +6,7 @@ export const COMPANY = {
     whatsapp: "+44 7918 428115",
     email: "info@safecertskill.co.uk",
     supportEmail: "support@safecertskill.co.uk",
+    zakirEmail: "zakirkhan@safecertskillsltd.co.uk",
     address: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
     location: "Luton",
     registeredAddress: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
