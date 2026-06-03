@@ -45,7 +45,7 @@ export default function HomePage() {
             description: 'Professional training provider offering First Aid, Food Hygiene, and Health & Safety courses in Luton',
             url: 'https://safecertskill.co.uk',
             telephone: '+44-7918-428115',
-            email: 'info@safecertskill.co.uk',
+            email: 'info@safecertskillsltd.co.uk',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Luton',

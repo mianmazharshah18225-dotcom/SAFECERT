@@ -1,41 +1,36 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import { COMPANY } from '@/lib/data'
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+import { COMPANY } from "@/lib/data";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json()
-    const { name, email, phone, course, message } = body
+    try {
+        const body = await request.json();
+        const { name, email, phone, course, message } = body;
 
-    // Validate required fields
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: 'Name, email, and message are required' },
-        { status: 400 }
-      )
-    }
+        // Validate required fields
+        if (!name || !email || !message) {
+            return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 });
+        }
 
-    // Skip sending if Resend is not configured
-    if (!resend) {
-      console.warn('Resend API key not configured. Contact form submission received but email not sent')
-      // Still return success so the form works in development
-      return NextResponse.json({
-        success: true,
-        message: 'Contact form submitted (email service not configured)'
-      })
-    }
+        // Skip sending if Resend is not configured
+        if (!resend) {
+            console.warn("Resend API key not configured. Contact form submission received but email not sent");
+            // Still return success so the form works in development
+            return NextResponse.json({
+                success: true,
+                message: "Contact form submitted (email service not configured)",
+            });
+        }
 
-    // Send email to info@safecertskill.co.uk
-    const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || 'SafeCert Skills <noreply@safecertskill.co.uk>',
-      to: [COMPANY.email], // Send to info@safecertskill.co.uk
-      replyTo: email, // User's email for easy reply
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
+        // Send email to info@safecertskillsltd.co.uk
+        const { data, error } = await resend.emails.send({
+            from: process.env.FROM_EMAIL || "SafeCert Skills <noreply@safecertskill.co.uk>",
+            to: [COMPANY.email], // Send to info@safecertskillsltd.co.uk
+            replyTo: email, // User's email for easy reply
+            subject: `New Contact Form Submission from ${name}`,
+            html: `
         <!DOCTYPE html>
         <html>
           <head>
@@ -66,22 +61,30 @@ export async function POST(request: NextRequest) {
                   <span class="label">Email:</span>
                   <span class="value"><a href="mailto:${email}">${email}</a></span>
                 </div>
-                ${phone ? `
+                ${
+                    phone
+                        ? `
                 <div class="field">
                   <span class="label">Phone:</span>
                   <span class="value"><a href="tel:${phone}">${phone}</a></span>
                 </div>
-                ` : ''}
-                ${course ? `
+                `
+                        : ""
+                }
+                ${
+                    course
+                        ? `
                 <div class="field">
                   <span class="label">Course Interested In:</span>
                   <span class="value">${course}</span>
                 </div>
-                ` : ''}
+                `
+                        : ""
+                }
                 <div class="field">
                   <span class="label">Message:</span>
                   <div class="message-box">
-                    ${message.replace(/\n/g, '<br>')}
+                    ${message.replace(/\n/g, "<br>")}
                   </div>
                 </div>
                 <p style="margin-top: 20px; color: #666; font-size: 14px;">
@@ -92,26 +95,20 @@ export async function POST(request: NextRequest) {
           </body>
         </html>
       `,
-    })
+        });
 
-    if (error) {
-      console.error('Error sending contact form email:', error)
-      return NextResponse.json(
-        { error: 'Failed to send email' },
-        { status: 500 }
-      )
+        if (error) {
+            console.error("Error sending contact form email:", error);
+            return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+        }
+
+        return NextResponse.json({
+            success: true,
+            message: "Contact form submitted successfully",
+            data,
+        });
+    } catch (error) {
+        console.error("Error processing contact form:", error);
+        return NextResponse.json({ error: "Internal server error" }, { status: 500 });
     }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Contact form submitted successfully',
-      data
-    })
-  } catch (error) {
-    console.error('Error processing contact form:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
-  }
 }

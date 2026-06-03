@@ -1,70 +1,68 @@
-import { Resend } from 'resend'
-import { prisma } from './prisma'
+import { Resend } from "resend";
+import { prisma } from "./prisma";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 interface SendEmailParams {
-  to: string
-  subject: string
-  html: string
-  type: 'WELCOME' | 'ENROLLMENT_CONFIRMATION' | 'PAYMENT_SUCCESS' | 'COURSE_REMINDER' | 'COURSE_COMPLETION'
+    to: string;
+    subject: string;
+    html: string;
+    type: "WELCOME" | "ENROLLMENT_CONFIRMATION" | "PAYMENT_SUCCESS" | "COURSE_REMINDER" | "COURSE_COMPLETION";
 }
 
 export async function sendEmail({ to, subject, html, type }: SendEmailParams) {
-  try {
-    // Skip sending if Resend is not configured
-    if (!resend) {
-      console.warn('Resend API key not configured. Email not sent:', { to, subject, type })
-      return { success: false, error: 'Email service not configured' }
+    try {
+        // Skip sending if Resend is not configured
+        if (!resend) {
+            console.warn("Resend API key not configured. Email not sent:", { to, subject, type });
+            return { success: false, error: "Email service not configured" };
+        }
+
+        const { data, error } = await resend.emails.send({
+            from: process.env.FROM_EMAIL || "SafeCert Skills <noreply@safecertskill.co.uk>",
+            to: [to],
+            subject,
+            html,
+        });
+
+        if (error) {
+            console.error("Error sending email:", error);
+
+            // Log failed email
+            await prisma.emailLog.create({
+                data: {
+                    to,
+                    subject,
+                    type,
+                    status: "failed",
+                },
+            });
+
+            return { success: false, error };
+        }
+
+        // Log successful email
+        await prisma.emailLog.create({
+            data: {
+                to,
+                subject,
+                type,
+                status: "sent",
+            },
+        });
+
+        return { success: true, data };
+    } catch (error) {
+        console.error("Error in sendEmail:", error);
+        return { success: false, error };
     }
-
-    const { data, error } = await resend.emails.send({
-      from: process.env.FROM_EMAIL || 'SafeCert Skills <noreply@safecertskill.co.uk>',
-      to: [to],
-      subject,
-      html,
-    })
-
-    if (error) {
-      console.error('Error sending email:', error)
-
-      // Log failed email
-      await prisma.emailLog.create({
-        data: {
-          to,
-          subject,
-          type,
-          status: 'failed',
-        },
-      })
-
-      return { success: false, error }
-    }
-
-    // Log successful email
-    await prisma.emailLog.create({
-      data: {
-        to,
-        subject,
-        type,
-        status: 'sent',
-      },
-    })
-
-    return { success: true, data }
-  } catch (error) {
-    console.error('Error in sendEmail:', error)
-    return { success: false, error }
-  }
 }
 
 // Email templates
 export const emailTemplates = {
-  welcome: (name: string) => ({
-    subject: 'Welcome to SafeCert Skills Ltd!',
-    html: `
+    welcome: (name: string) => ({
+        subject: "Welcome to SafeCert Skills Ltd!",
+        html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -93,9 +91,9 @@ export const emailTemplates = {
                 <li>Health & Safety (Level 3)</li>
               </ul>
               <p>
-                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/courses" class="button">Browse Courses</a>
+                <a href="${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/courses" class="button">Browse Courses</a>
               </p>
-              <p>If you have any questions, feel free to contact us at info@safecertskill.co.uk</p>
+              <p>If you have any questions, feel free to contact us at info@safecertskillsltd.co.uk</p>
               <p>Best regards,<br>The SafeCert Skills Team</p>
             </div>
             <div class="footer">
@@ -106,11 +104,11 @@ export const emailTemplates = {
         </body>
       </html>
     `,
-  }),
+    }),
 
-  enrollmentConfirmation: (name: string, courseName: string) => ({
-    subject: `Enrollment Confirmed: ${courseName}`,
-    html: `
+    enrollmentConfirmation: (name: string, courseName: string) => ({
+        subject: `Enrollment Confirmed: ${courseName}`,
+        html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -139,7 +137,7 @@ export const emailTemplates = {
               <p><strong>Course:</strong> ${courseName}</p>
               <p>You can now access your course materials and start learning.</p>
               <p>
-                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard" class="button">Go to Dashboard</a>
+                <a href="${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/dashboard" class="button">Go to Dashboard</a>
               </p>
               <p>If you have any questions about the course, please don't hesitate to contact us.</p>
               <p>Best regards,<br>The SafeCert Skills Team</p>
@@ -151,11 +149,11 @@ export const emailTemplates = {
         </body>
       </html>
     `,
-  }),
+    }),
 
-  paymentSuccess: (name: string, courseName: string, amount: number) => ({
-    subject: 'Payment Successful - SafeCert Skills',
-    html: `
+    paymentSuccess: (name: string, courseName: string, amount: number) => ({
+        subject: "Payment Successful - SafeCert Skills",
+        html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -186,7 +184,7 @@ export const emailTemplates = {
               </div>
               <p>You can now access your course and start learning immediately.</p>
               <p>
-                <a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/dashboard" class="button">Access Course</a>
+                <a href="${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/dashboard" class="button">Access Course</a>
               </p>
               <p>Best regards,<br>The SafeCert Skills Team</p>
             </div>
@@ -197,5 +195,5 @@ export const emailTemplates = {
         </body>
       </html>
     `,
-  }),
-}
+    }),
+};

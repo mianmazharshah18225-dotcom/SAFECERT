@@ -4,7 +4,7 @@ export const COMPANY = {
     subtitle: "Professional Training & Certification Provider in Luton",
     phone: "+44 7918 428115",
     whatsapp: "+44 7918 428115",
-    email: "info@safecertskill.co.uk",
+    email: "info@safecertskillsltd.co.uk",
     supportEmail: "support@safecertskill.co.uk",
     zakirEmail: "zakirkhan@safecertskillsltd.co.uk",
     address: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
