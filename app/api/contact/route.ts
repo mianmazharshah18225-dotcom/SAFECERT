@@ -84,13 +84,26 @@ export async function POST(request: NextRequest) {
         // SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, optionally FROM_EMAIL
         const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM_EMAIL, FROM_EMAIL } = process.env;
 
+        const hasAnySmtpConfig = Boolean(SMTP_HOST || SMTP_PORT || SMTP_USER || SMTP_PASS);
 
         if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+            // If user started providing SMTP config but it's incomplete, fail loudly.
+            if (hasAnySmtpConfig) {
+                return NextResponse.json(
+                    {
+                        error: "SMTP is not fully configured. Required: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS",
+                    },
+                    { status: 500 },
+                );
+            }
+
             console.warn("SMTP not configured; cannot send contact email.");
-            return NextResponse.json({
-                success: true,
-                message: "Contact form submitted (email sending not configured)",
-            });
+            return NextResponse.json(
+                {
+                    error: "Contact form email sending is not configured on the server.",
+                },
+                { status: 500 },
+            );
         }
 
         const nodemailer = await import("nodemailer");
@@ -105,8 +118,9 @@ export async function POST(request: NextRequest) {
             },
         });
 
-        const from = FROM_EMAIL || "SafeCert Skills <noreply@safecertskillsltd.co.uk>";
-        const fromHeader = SMTP_FROM_EMAIL ? `${from} <${SMTP_FROM_EMAIL}>` : from;
+        const fromAddress = SMTP_FROM_EMAIL || FROM_EMAIL || "noreply@safecertskillsltd.co.uk";
+        const fromName = "SafeCert Skills";
+        const fromHeader = `${fromName} <${fromAddress}>`;
 
         await transporter.sendMail({
             from: fromHeader,
