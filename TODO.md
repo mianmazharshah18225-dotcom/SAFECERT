@@ -1,6 +1,4 @@
-- [ ] Inspect current email/contact implementation
-- [ ] Add SMTP configuration placeholders via .env.example (no secrets committed)
-- [ ] Update contact route to correctly map SMTP_FROM_EMAIL and FROM_EMAIL (best-practice from/fromHeader)
-- [ ] Ensure SMTP settings cause email to fail loudly only when configured
-- [x] Run lint/build to verify no TS errors
-- [x] (Optional) Run a quick local test call for /api/test-email or /api/contact
+- [ ] Fix contact form SMTP configuration error handling (improve env var diagnostics)
+- [ ] Ensure app/api/contact/route.ts compiles after changes
+- [ ] Run local tests for /api/contact with missing env vars and with SMTP env vars
+- [ ] If needed, update DEPLOYMENT-GUIDE.md to mention required SMTP env vars

@@ -84,23 +84,17 @@ export async function POST(request: NextRequest) {
         // SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, optionally FROM_EMAIL
         const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM_EMAIL, FROM_EMAIL } = process.env;
 
-        const hasAnySmtpConfig = Boolean(SMTP_HOST || SMTP_PORT || SMTP_USER || SMTP_PASS);
+        const missing: string[] = [];
+        if (!SMTP_HOST) missing.push("SMTP_HOST");
+        if (!SMTP_PORT) missing.push("SMTP_PORT");
+        if (!SMTP_USER) missing.push("SMTP_USER");
+        if (!SMTP_PASS) missing.push("SMTP_PASS");
 
-        if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-            // If user started providing SMTP config but it's incomplete, fail loudly.
-            if (hasAnySmtpConfig) {
-                return NextResponse.json(
-                    {
-                        error: "SMTP is not fully configured. Required: SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS",
-                    },
-                    { status: 500 },
-                );
-            }
-
-            console.warn("SMTP not configured; cannot send contact email.");
+        if (missing.length) {
+            console.warn("Contact form SMTP not configured. Missing:", missing);
             return NextResponse.json(
                 {
-                    error: "Contact form email sending is not configured on the server.",
+                    error: "SMTP is not fully configured. Missing env vars: " + missing.join(", "),
                 },
                 { status: 500 },
             );
