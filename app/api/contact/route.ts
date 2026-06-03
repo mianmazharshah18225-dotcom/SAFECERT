@@ -8,7 +8,24 @@ export async function POST(request: NextRequest) {
 
         // Validate required fields
         if (!name || !email || !message) {
-            return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 });
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Name, email, and message are required",
+                },
+                { status: 400 },
+            );
+        }
+
+        // Validate email shape early (prevents nodemailer envelope failures)
+        if (!email.includes("@")) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Please provide a valid email address.",
+                },
+                { status: 400 },
+            );
         }
 
         const html = `
@@ -79,9 +96,9 @@ export async function POST(request: NextRequest) {
 
         const to = COMPANY.email; // info@safecertskillsltd.co.uk
 
-        // For direct email sending without Resend, we must use an SMTP provider.
+        // SMTP sending only (no Resend)
         // Configure SMTP in .env.local:
-        // SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, optionally FROM_EMAIL
+        // SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, optionally SMTP_FROM_EMAIL or FROM_EMAIL
         const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM_EMAIL, FROM_EMAIL } = process.env;
 
         const missing: string[] = [];
@@ -94,7 +111,20 @@ export async function POST(request: NextRequest) {
             console.warn("Contact form SMTP not configured. Missing:", missing);
             return NextResponse.json(
                 {
-                    error: "SMTP is not fully configured. Missing env vars: " + missing.join(", "),
+                    success: false,
+                    error: "Contact form email sending is not configured on the server (SMTP missing).",
+                },
+                { status: 500 },
+            );
+        }
+
+        const port = Number(SMTP_PORT);
+        if (!Number.isFinite(port) || port <= 0) {
+            console.warn("Invalid SMTP_PORT:", SMTP_PORT);
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Server misconfiguration: invalid SMTP_PORT.",
                 },
                 { status: 500 },
             );
@@ -104,8 +134,8 @@ export async function POST(request: NextRequest) {
 
         const transporter = nodemailer.createTransport({
             host: SMTP_HOST,
-            port: Number(SMTP_PORT),
-            secure: Number(SMTP_PORT) === 465,
+            port,
+            secure: port === 465,
             auth: {
                 user: SMTP_USER,
                 pass: SMTP_PASS,
@@ -115,6 +145,17 @@ export async function POST(request: NextRequest) {
         const fromAddress = SMTP_FROM_EMAIL || FROM_EMAIL || "noreply@safecertskillsltd.co.uk";
         const fromName = "SafeCert Skills";
         const fromHeader = `${fromName} <${fromAddress}>`;
+
+        // Basic sender validation: prevents nodemailer from failing with bad envelope
+        if (!email || !email.includes("@")) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Please provide a valid email address.",
+                },
+                { status: 400 },
+            );
+        }
 
         await transporter.sendMail({
             from: fromHeader,
@@ -130,6 +171,16 @@ export async function POST(request: NextRequest) {
         });
     } catch (error) {
         console.error("Error processing contact form:", error);
-        return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+
+        // Return a sanitized error message for debugging.
+        const message = error instanceof Error ? error.message : String(error);
+
+        return NextResponse.json(
+            {
+                error: "Internal server error",
+                debug: message,
+            },
+            { status: 500 },
+        );
     }
 }
