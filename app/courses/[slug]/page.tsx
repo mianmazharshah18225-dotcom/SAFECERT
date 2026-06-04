@@ -76,9 +76,10 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ s
                 ))}
               </div>
 
-              <Link href={`/checkout?course=${course.id}`} className="btn-gold w-full block text-center py-4 rounded-xl font-bold text-dark-900 mb-3">
+              {/* <Link href={`/checkout?course=${course.id}`} className="btn-gold w-full block text-center py-4 rounded-xl font-bold text-dark-900 mb-3">
                 Proceed to Payment
-              </Link>
+              </Link> */}
+
 
               <a
                 href={`https://wa.me/${COMPANY.whatsapp.replace(/[\s+]/g, '')}?text=${encodeURIComponent(`Hi, I want to book the ${course.title} course. Please provide more details about enrollment and start dates.`)}`}
