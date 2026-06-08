@@ -92,8 +92,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center shadow-md group-hover:shadow-primary-600/30 transition-all">
-                <Shield className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 mt-1 rounded-xl bg-white flex items-center justify-center shadow-md group-hover:shadow-primary-600/30 transition-all overflow-hidden">
+
+                  <img
+                    src="/Gemini_Generated_Image_7hfxla7hfxla7hfx-removebg-preview.png"
+                    alt="SafeCert logo"
+                    className="w-full h-full object-contain object-center"
+                  />
               </div>
               <div>
                 <div className="font-display font-800 text-lg leading-tight text-primary-900">SafeCert</div>
