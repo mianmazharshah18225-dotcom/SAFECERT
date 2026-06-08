@@ -6,7 +6,8 @@ export default function CareersPage() {
   const categories = [
     { id: 'firstaid', label: 'First Aid', icon: '🏥' },
     { id: 'foodhygiene', label: 'Food & Hygiene', icon: '🍽️' },
-    { id: 'healthsafety', label: 'Health & Safety', icon: '⚠️' },
+    { id: 'healthsafety', label: 'Health & Safety', icon: '🛡️' },
+
   ]
 
   return (

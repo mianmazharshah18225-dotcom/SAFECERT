@@ -115,7 +115,7 @@ export default function Footer() {
               </a>
               <EmailLink email={COMPANY.email} />
               <EmailLink email={COMPANY.supportEmail} />
-              <EmailLink email={COMPANY.zakirEmail} />
+
               <p className="flex items-center gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 text-primary-400" />
                 {COMPANY.address}

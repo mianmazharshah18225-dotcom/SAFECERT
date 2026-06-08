@@ -6,10 +6,10 @@ export const COMPANY = {
     whatsapp: "+44 7918 428115",
     email: "info@safecertskillsltd.co.uk",
     supportEmail: "support@safecertskill.co.uk",
-    zakirEmail: "zakir@safecertskillsltd.co.uk",
-    address: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
+
+    address: "SafeCert Skills Ltd, 2nd Floor, Regional House, 28-34 Chapel Street, Luton, LU12SE",
     location: "Luton",
-    registeredAddress: "68-72 Stuart Street, Luton, United Kingdom, LU1 2SW",
+    registeredAddress: "SafeCert Skills Ltd, 2nd Floor, Regional House, 28-34 Chapel Street, Luton, LU12SE",
     companyNumber: "15893572",
     incorporatedDate: "3 October 2024",
     duration: "1 Day",
@@ -37,7 +37,7 @@ export const COMPANY = {
 export const CATEGORIES = [
     { id: "firstaid", name: "First Aid", icon: "🏥", href: "/courses?cat=firstaid", color: "from-red-500 to-red-700" },
     { id: "foodhygiene", name: "Food & Hygiene", icon: "🍽️", href: "/courses?cat=foodhygiene", color: "from-green-500 to-green-700" },
-    { id: "healthsafety", name: "Health & Safety", icon: "⚠️", href: "/courses?cat=healthsafety", color: "from-orange-500 to-orange-700" },
+    { id: "healthsafety", name: "Health & Safety", icon: "🛡️", href: "/courses?cat=healthsafety", color: "from-orange-500 to-orange-700" },
 ];
 
 export const COURSES = [
@@ -80,7 +80,7 @@ export const COURSES = [
         price: "£100",
         originalPrice: "£120",
         level: "Level 3",
-        icon: "⚠️",
+        icon: "🛡️",
         image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800&q=80",
         description: "Complete health and safety training program. Master workplace safety, risk assessment, and safety management to become a qualified health and safety professional.",
         features: ["Risk Assessment", "Safety Management", "Accident Investigation", "Legal Compliance", "Professional Certification"],
@@ -94,7 +94,7 @@ export const CAREERS = [
     { title: "Emergency Care Assistant", salary: "£22,000 – £30,000", category: "firstaid", icon: "🚑" },
     { title: "Food Safety Officer", salary: "£25,000 – £38,000", category: "foodhygiene", icon: "🍽️" },
     { title: "Environmental Health Officer", salary: "£28,000 – £45,000", category: "foodhygiene", icon: "🏢" },
-    { title: "Health & Safety Advisor", salary: "£30,000 – £48,000", category: "healthsafety", icon: "⚠️" },
+    { title: "Health & Safety Advisor", salary: "£30,000 – £48,000", category: "healthsafety", icon: "🛡️" },
     { title: "Safety Manager", salary: "£35,000 – £55,000", category: "healthsafety", icon: "📋" },
 ];
 
@@ -224,12 +224,12 @@ export const TRAINERS = [
         image: "/trainers/zowie.jpg",
         specialty: "Health & Safety Management",
     },
-    {
-        name: "Dave Watts",
-        rating: 5,
-        image: "/trainers/dave.jpg",
-        specialty: "Professional Certification & Compliance",
-    },
+    // {
+    //     name: "Dave Watts",
+    //     rating: 5,
+    //     image: "/trainers/dave.jpg",
+    //     specialty: "Professional Certification & Compliance",
+    // },
 ];
 
 export const BLOG_POSTS = [
