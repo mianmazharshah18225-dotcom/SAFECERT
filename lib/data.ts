@@ -7,9 +7,9 @@ export const COMPANY = {
     email: "info@safecertskillsltd.co.uk",
     supportEmail: "support@safecertskill.co.uk",
 
-    address: "SafeCert Skills Ltd, 2nd Floor, Regional House, 28-34 Chapel Street, Luton, LU12SE",
+    address: "SafeCert Skills Ltd, Regional House, Henlow suite, 28-34 Chapel Street, Luton, LU12SE",
     location: "Luton",
-    registeredAddress: "SafeCert Skills Ltd, 2nd Floor, Regional House, 28-34 Chapel Street, Luton, LU12SE",
+    registeredAddress: "SafeCert Skills Ltd, Regional House, Henlow suite, 28-34 Chapel Street, Luton, LU12SE",
     companyNumber: "15893572",
     incorporatedDate: "3 October 2024",
     duration: "1 Day",
