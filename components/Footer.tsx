@@ -35,7 +35,7 @@ export default function Footer() {
                   <img
                     src="/Gemini_Generated_Image_7hfxla7hfxla7hfx-removebg-preview.png"
                     alt="SafeCert logo"
-                    className="w-full h-full object-contain object-center"
+                    className="w-full h-full object-contain object-center pt-2"
                   />
               </div>
               <div>
