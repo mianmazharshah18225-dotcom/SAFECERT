@@ -47,7 +47,7 @@ export default function ContactPage() {
     { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}`, isEmail: true },
 
     { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#', isEmail: false },
-    { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Sat: 8am–6pm', href: '#', isEmail: false },
+    { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Fri: 9am–5pm', href: '#', isEmail: false },
   ]
 
   return (
