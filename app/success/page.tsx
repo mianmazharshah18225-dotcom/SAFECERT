@@ -114,12 +114,7 @@ function SuccessContent() {
                   {COMPANY.email}
                 </a>
               </li>
-              <li>
-                <strong>Support:</strong>{' '}
-                <a href={`mailto:${COMPANY.supportEmail}`} className="text-primary-600 hover:underline">
-                  {COMPANY.supportEmail}
-                </a>
-              </li>
+
             </ul>
           </div>
 

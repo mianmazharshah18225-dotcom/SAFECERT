@@ -5,7 +5,6 @@ export const COMPANY = {
     phone: "+44 7918 428115",
     whatsapp: "+44 7918 428115",
     email: "info@safecertskillsltd.co.uk",
-    supportEmail: "support@safecertskill.co.uk",
 
     address: "SafeCert Skills Ltd, Regional House, Henlow suite, 28-34 Chapel Street, Luton, LU12SE",
     location: "Luton",

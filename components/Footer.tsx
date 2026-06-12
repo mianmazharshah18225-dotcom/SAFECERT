@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Phone, MapPin, Star, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react'
 import { COMPANY, COURSES, CATEGORIES } from '@/lib/data'
 import EmailLink from './EmailLink'
-
+import FooterTrustpilotReviews from './FooterTrustpilotReviews'
 
 export default function Footer() {
   return (
@@ -32,11 +32,11 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center overflow-hidden">
-                  <img
-                    src="/Gemini_Generated_Image_7hfxla7hfxla7hfx-removebg-preview.png"
-                    alt="SafeCert logo"
-                    className="w-full h-full object-contain object-center pt-2"
-                  />
+                <img
+                  src="/Gemini_Generated_Image_7hfxla7hfxla7hfx-removebg-preview.png"
+                  alt="SafeCert logo"
+                  className="w-full h-full object-contain object-center pt-2"
+                />
               </div>
               <div>
                 <div className="font-display font-bold text-xl">SafeCert Skills Ltd</div>
@@ -55,7 +55,7 @@ export default function Footer() {
                     <Star key={i} className="w-4 h-4 fill-green-400 text-green-400" />
                   ))}
                 </div>
-                <p className="text-sm font-semibold">Excellent — {COMPANY.trustpilot.reviews.toLocaleString()} reviews</p>
+                <FooterTrustpilotReviews />
                 <p className="text-xs text-white/50">on Trustpilot</p>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                 {COMPANY.phone}
               </a>
               <EmailLink email={COMPANY.email} />
-              <EmailLink email={COMPANY.supportEmail} />
+
 
               <p className="flex items-center gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 text-primary-400" />

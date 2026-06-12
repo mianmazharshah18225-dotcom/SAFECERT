@@ -198,4 +198,4 @@ Your sitemap URL is: `https://safecertskill.co.uk/sitemap.xml`
 
 ---
 
-**Questions?** Contact your developer or email support@safecertskill.co.uk
+**Questions?** Contact your developer or email [redacted]

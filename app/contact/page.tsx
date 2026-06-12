@@ -44,7 +44,7 @@ export default function ContactPage() {
   const contactDetails = [
     { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone}`, isEmail: false },
     { icon: <Mail className="w-5 h-5" />, label: 'General Enquiries', value: COMPANY.email, href: `mailto:${COMPANY.email}`, isEmail: true },
-    { icon: <Mail className="w-5 h-5" />, label: 'Support', value: COMPANY.supportEmail, href: `mailto:${COMPANY.supportEmail}`, isEmail: true },
+
 
     { icon: <MapPin className="w-5 h-5" />, label: 'Address', value: COMPANY.address, href: '#', isEmail: false },
     { icon: <Clock className="w-5 h-5" />, label: 'Hours', value: 'Mon–Fri: 9am–5pm', href: '#', isEmail: false },
@@ -62,7 +62,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            Our friendly team is here to help. Whether you have questions about a course, 
+            Our friendly team is here to help. Whether you have questions about a course,
             need advice on which licence to get, or want to enrol — we're here for you.
           </p>
         </div>
