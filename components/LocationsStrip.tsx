@@ -32,7 +32,7 @@ export default function LocationsStrip() {
                 <div>
                   <p className="font-semibold text-gray-900">Operating Hours</p>
                   <p className="text-gray-600">{COMPANY.timing}</p>
-                  <p className="text-sm text-gray-500">Monday to Saturday</p>
+                  <p className="text-sm text-gray-500">Monday to Friday</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

@@ -41,7 +41,7 @@ export default function FAQsLayout({
                 name: 'How long does training take?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'All our courses run for 1 Day with classes scheduled from 8:00 AM to 6:00 PM at our Luton training centre.',
+                  text: 'All our courses run for 1 Day with classes scheduled from 9:00 AM to 5:00 PM at our Luton training centre.',
                 },
               },
               {
@@ -65,7 +65,7 @@ export default function FAQsLayout({
                 name: 'Where is your training centre located?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Our training centre is located in Luton, United Kingdom. Classes run from 8:00 AM to 6:00 PM.',
+                  text: 'Our training centre is located in Luton, United Kingdom. Classes run from 9:00 AM to 5:00 PM.',
                 },
               },
             ],
