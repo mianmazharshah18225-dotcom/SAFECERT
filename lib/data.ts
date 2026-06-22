@@ -2,7 +2,7 @@ export const COMPANY = {
     name: "SafeCert Skills Ltd",
     tagline: "Get Trained, Get Certified",
     subtitle: "Professional Training & Certification Provider in Luton",
-    phone: "+44 7918 428115",
+    phone: "+44 7305990890",
     whatsapp: "+44 7918 428115",
     email: "info@safecertskillsltd.co.uk",
 
